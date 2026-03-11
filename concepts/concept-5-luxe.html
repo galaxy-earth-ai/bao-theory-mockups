@@ -156,6 +156,45 @@
             line-height: 1.5;
         }
 
+        /* Placeholder treatment */
+        .placeholder-block {
+            background-color: #E8E8E8;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-image: 
+                radial-gradient(circle, #D0D0D0 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .placeholder-label {
+            background: rgba(26, 26, 26, 0.05);
+            color: var(--color-text);
+            padding: 1rem 2rem;
+            font-family: var(--font-main);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            z-index: 10;
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .placeholder-dims {
+            position: absolute;
+            bottom: 2rem;
+            font-family: var(--font-main);
+            font-size: 0.6rem;
+            letter-spacing: 0.1em;
+            opacity: 0.3;
+            color: var(--color-text);
+            text-transform: uppercase;
+        }
+
         .location-section {
             display: grid;
             grid-template-columns: 1.5fr 1fr;
@@ -225,7 +264,10 @@
             <p>A nomadic kitchen exploring the intersection of traditional street food and modern editorial design. Form follows flavor.</p>
             <a href="#" class="cta-btn">Experience the Theory</a>
         </div>
-        <div class="hero-img"></div>
+        <div class="placeholder-block hero-img">
+            <div class="placeholder-label">LUXE_EDITORIAL_HERO.JPG</div>
+            <div class="placeholder-dims">1200 x 1500</div>
+        </div>
     </section>
 
     <section class="section">
@@ -235,19 +277,28 @@
         </div>
         <div class="menu-grid">
             <div class="menu-item">
-                <div class="img" style="background-image: url('https://images.unsplash.com/photo-1534422298391-e4f8c170db06?auto=format&fit=crop&q=80&w=600')"></div>
+                <div class="placeholder-block img">
+                    <div class="placeholder-label">BAO_PORTRAIT_01.JPG</div>
+                    <div class="placeholder-dims">1000 x 1000</div>
+                </div>
                 <h3>Theory No. 1</h3>
                 <div class="price">$9.00 USD</div>
                 <div class="desc">Slow-braised pork belly, traditional pickles, crushed peanuts, and fresh cilantro. A classic re-imagined.</div>
             </div>
             <div class="menu-item">
-                <div class="img" style="background-image: url('https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&q=80&w=600')"></div>
+                <div class="placeholder-block img">
+                    <div class="placeholder-label">BAO_PORTRAIT_02.JPG</div>
+                    <div class="placeholder-dims">1000 x 1000</div>
+                </div>
                 <h3>Szechuan Bird</h3>
                 <div class="price">$8.50 USD</div>
                 <div class="desc">Crispy fried chicken glazed with house-made mala sauce, topped with chili crisp mayo and refreshing slaw.</div>
             </div>
             <div class="menu-item">
-                <div class="img" style="background-image: url('https://images.unsplash.com/photo-1563245332-692e7c56023a?auto=format&fit=crop&q=80&w=600')"></div>
+                <div class="placeholder-block img">
+                    <div class="placeholder-label">BAO_PORTRAIT_03.JPG</div>
+                    <div class="placeholder-dims">1000 x 1000</div>
+                </div>
                 <h3>Earth Theory</h3>
                 <div class="price">$8.00 USD</div>
                 <div class="desc">Braised shiitake mushrooms and delicate tofu skin, finished with a ginger-scallion oil infusion. Vegan.</div>
