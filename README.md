@@ -11,7 +11,6 @@ A lightweight public gallery for five Bao Theory homepage concepts.
 - `index.html` — shareable landing page / gallery
 - `styles.css` — lightweight shared styling for the gallery
 - `concepts/` — original standalone HTML mockups
-- `boards/` — exported presentation boards (PDF)
 - `assets/` — image asset used for preview/share cards
 
 ## Notes
