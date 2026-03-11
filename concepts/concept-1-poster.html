@@ -13,7 +13,7 @@
             --font-mono: 'JetBrains Mono', 'Courier New', monospace;
         }
 
-        * { margin: 0; padding: 0; box-box: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             background-color: var(--color-bg); 
             color: var(--color-text);
@@ -43,18 +43,88 @@
         .logo { font-size: 1.5rem; font-weight: 900; }
         nav a { margin-left: 2rem; text-decoration: none; color: inherit; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; }
 
+        /* Placeholder treatment */
+        .placeholder-block {
+            background-color: #E0E0E0;
+            border: 4px solid var(--color-text);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin: 2rem 0;
+            min-height: 400px;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(0,0,0,0.03) 35px, rgba(0,0,0,0.03) 70px);
+        }
+
+        .placeholder-block::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                linear-gradient(to top right, transparent calc(50% - 1px), var(--color-text) 50%, transparent calc(50% + 1px)),
+                linear-gradient(to bottom right, transparent calc(50% - 1px), var(--color-text) 50%, transparent calc(50% + 1px));
+            opacity: 0.1;
+        }
+
+        .placeholder-label {
+            background: var(--color-text);
+            color: white;
+            padding: 1rem 2rem;
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            font-weight: 900;
+            letter-spacing: 0.2em;
+            z-index: 10;
+            text-align: center;
+            box-shadow: 10px 10px 0 var(--color-accent);
+        }
+
+        .placeholder-dims {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            opacity: 0.5;
+            color: var(--color-text);
+        }
+
+        .hero-container {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            background: var(--color-text);
+        }
+
+        .hero-image-placeholder {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            margin: 0;
+            border: none;
+            background-color: #222;
+        }
+        
+        .hero-image-placeholder .placeholder-label {
+            background: var(--color-accent);
+            box-shadow: 10px 10px 0 white;
+        }
+
         .hero {
+            position: relative;
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
             padding: 2rem;
-            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1534422298391-e4f8c170db06?auto=format&fit=crop&q=80&w=2000') no-repeat center center;
-            background-size: cover;
             color: white;
+            z-index: 5;
+            pointer-events: none;
         }
+        .hero * { pointer-events: auto; }
 
-        .hero h1 { font-size: clamp(4rem, 15vw, 12rem); margin-bottom: 1rem; line-height: 0.85; }
+        .hero h1 { font-size: clamp(4rem, 15vw, 12rem); margin-bottom: 1rem; line-height: 0.85; text-shadow: 0 0 40px rgba(0,0,0,0.5); }
         .hero-meta { display: flex; justify-content: space-between; align-items: flex-end; border-top: 1px solid rgba(255,255,255,0.3); pt: 1rem; margin-top: 2rem; padding-top: 1rem; }
         .hero-sub { max-width: 400px; font-size: 1.2rem; line-height: 1.4; font-weight: 500; }
 
@@ -119,13 +189,19 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>STREET BAO.<br>EDITORIAL ENERGY.</h1>
-        <div class="hero-meta">
-            <p class="hero-sub">街头包子，编辑感表达。<br>Modern bao culture rooted in Vancouver.</p>
-            <div class="mono">EST. 2024 / VANCOUVER, BC</div>
+    <div class="hero-container">
+        <div class="placeholder-block hero-image-placeholder">
+            <div class="placeholder-label">HERO_IMAGE_KEY_VISUAL.JPG</div>
+            <div class="placeholder-dims">2560 x 1440</div>
         </div>
-    </section>
+        <section class="hero">
+            <h1>STREET BAO.<br>EDITORIAL ENERGY.</h1>
+            <div class="hero-meta">
+                <p class="hero-sub">街头包子，编辑感表达。<br>Modern bao culture rooted in Vancouver.</p>
+                <div class="mono">EST. 2024 / VANCOUVER, BC</div>
+            </div>
+        </section>
+    </div>
 
     <div class="ticker">
         <div class="ticker-content">
@@ -137,14 +213,26 @@
         <h2 class="section-title">The Lineup</h2>
         <div class="menu-grid">
             <div class="menu-item">
+                <div class="placeholder-block" style="min-height: 250px; margin-top: 0;">
+                    <div class="placeholder-label">PRODUCT_SHOT_01.JPG</div>
+                    <div class="placeholder-dims">1200 x 800</div>
+                </div>
                 <h3>THEORY NO.1 <span class="price">9.00</span></h3>
                 <p>Signature pork belly, pickled mustard greens, crushed peanuts, cilantro. 经典五花肉，酸菜，花生粉，香菜。</p>
             </div>
             <div class="menu-item">
+                <div class="placeholder-block" style="min-height: 250px; margin-top: 0;">
+                    <div class="placeholder-label">PRODUCT_SHOT_02.JPG</div>
+                    <div class="placeholder-dims">1200 x 800</div>
+                </div>
                 <h3>HOT CHICKEN <span class="price">8.50</span></h3>
                 <p>Szechuan glazed fried chicken, slaw, chili crisp mayo. 川味炸鸡，卷心菜丝，油辣子蛋黄酱。</p>
             </div>
             <div class="menu-item">
+                <div class="placeholder-block" style="min-height: 250px; margin-top: 0;">
+                    <div class="placeholder-label">PRODUCT_SHOT_03.JPG</div>
+                    <div class="placeholder-dims">1200 x 800</div>
+                </div>
                 <h3>EARTH BAO <span class="price">8.00</span></h3>
                 <p>Braised shiitake, tofu skin, ginger scallion sauce. (Vegan) 卤香菇，腐皮，姜葱酱。</p>
             </div>
