@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bao Theory | Concept 2: Editorial Grid</title>
+    <style>
+        :root {
+            --color-bg: #FFF4D9;
+            --color-text: #201C0D;
+            --color-accent: #CB0D00;
+            --font-main: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--color-bg); color: var(--color-text); font-family: var(--font-main); line-height: 1.4; }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1px;
+            background-color: var(--color-text);
+            border: 1px solid var(--color-text);
+            min-height: 100vh;
+        }
+
+        .grid-item {
+            background-color: var(--color-bg);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        /* Hero / Identity */
+        .item-logo { grid-column: span 3; grid-row: span 1; display: flex; align-items: center; border-right: 1px solid var(--color-text); }
+        .item-logo h1 { font-size: 2rem; font-weight: 900; letter-spacing: -0.02em; }
+        
+        .item-nav { grid-column: span 9; display: flex; justify-content: flex-end; align-items: center; gap: 3rem; }
+        .item-nav a { text-decoration: none; color: inherit; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; }
+
+        .mobile-header { display: none; background: var(--color-bg); padding: 1.5rem; border-bottom: 1px solid var(--color-text); position: sticky; top: 0; z-index: 1000; justify-content: space-between; align-items: center; }
+        .mobile-logo { font-size: 1.5rem; font-weight: 900; }
+        .mobile-toggle { font-weight: 900; font-size: 0.8rem; }
+
+        .item-hero-text { grid-column: span 8; grid-row: span 3; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--color-text); }
+        .item-hero-text h2 { font-size: 10vw; text-transform: uppercase; font-weight: 900; line-height: 0.85; margin-bottom: 2rem; }
+        .item-hero-text p { font-size: 1.5rem; max-width: 60%; font-weight: 500; border-top: 1px solid var(--color-text); padding-top: 1.5rem; }
+
+        .item-hero-img { grid-column: span 4; grid-row: span 3; background: url('https://images.unsplash.com/photo-1528667853127-14f706fd4d23?auto=format&fit=crop&q=80&w=1000') center center no-repeat; background-size: cover; filter: contrast(1.2) grayscale(0.2); }
+
+        /* Ticker Style Info */
+        .item-status { grid-column: span 12; background-color: var(--color-accent); color: #FFF4D9; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; font-weight: 900; text-transform: uppercase; }
+
+        /* Menu / Products */
+        .item-menu-header { grid-column: span 3; grid-row: span 2; font-weight: 900; font-size: 3rem; text-transform: uppercase; border-bottom: 1px solid var(--color-text); }
+        .item-menu-items { grid-column: span 9; grid-row: span 2; display: grid; grid-template-columns: repeat(3, 1fr); }
+        .menu-col { padding: 2rem; border-right: 1px solid var(--color-text); }
+        .menu-col:last-child { border-right: none; }
+        .menu-col h4 { font-size: 1.25rem; font-weight: 900; text-transform: uppercase; margin-bottom: 1rem; border-bottom: 1px solid var(--color-accent); padding-bottom: 0.5rem; display: inline-block; }
+        .menu-col p { font-size: 0.9rem; margin-top: 0.5rem; opacity: 0.8; line-height: 1.2; }
+
+        /* Schedule / Location */
+        .item-map { grid-column: span 6; grid-row: span 2; background-color: #eee; background: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=1200') center center; background-size: cover; border-top: 1px solid var(--color-text); }
+        .item-schedule { grid-column: span 6; grid-row: span 2; border-top: 1px solid var(--color-text); padding: 3rem; }
+        .item-schedule h3 { font-size: 3rem; font-weight: 900; text-transform: uppercase; margin-bottom: 2rem; }
+        .sched-row { display: flex; justify-content: space-between; padding: 1rem 0; border-bottom: 1px solid rgba(32, 28, 13, 0.2); font-weight: 700; text-transform: uppercase; }
+        .sched-row.active { color: var(--color-accent); border-bottom-color: var(--color-accent); }
+
+        /* Footer area */
+        .item-footer { grid-column: span 12; padding: 2rem; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; display: flex; justify-content: space-between; border-top: 1px solid var(--color-text); }
+
+        @media (max-width: 1024px) {
+            .grid-container { display: flex; flex-direction: column; gap: 0; background: var(--color-text); }
+            .grid-item { border-bottom: 1px solid var(--color-text); }
+            
+            .item-logo, .item-nav { display: none; }
+            .mobile-header { display: flex; }
+            
+            .item-hero-text { padding: 3rem 1.5rem; border-right: none; }
+            .item-hero-text h2 { font-size: 15vw; margin-bottom: 1.5rem; }
+            .item-hero-text p { font-size: 1.2rem; max-width: 100%; }
+            
+            .item-hero-img { height: 60vh; width: 100%; }
+            
+            .item-status { flex-direction: column; align-items: flex-start; gap: 0.75rem; padding: 1.5rem; }
+            .item-status span:last-child { width: 100%; text-align: center; padding: 1rem; margin-top: 0.5rem; }
+
+            .item-menu-header { font-size: 2rem; padding: 2rem 1.5rem; background: var(--color-text); color: white; border-bottom: none; }
+            .item-menu-items { grid-template-columns: 1fr; gap: 1px; }
+            .menu-col { background: var(--color-bg); padding: 2rem 1.5rem; }
+
+            .item-map { height: 300px; border-top: none; }
+            .item-schedule { padding: 2rem 1.5rem; border-top: none; }
+            .item-schedule h3 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+            
+            .item-footer { flex-direction: column; gap: 1rem; padding: 2rem 1.5rem; font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-header">
+        <div class="mobile-logo">BAO THEORY</div>
+        <div class="mobile-toggle">MENU</div>
+    </div>
+
+    <div class="grid-container">
+        <!-- Header -->
+        <div class="grid-item item-logo">
+            <h1>BAO THEORY</h1>
+        </div>
+        <div class="grid-item item-nav">
+            <a href="#">The Lineup</a>
+            <a href="#">Coordinates</a>
+            <a href="#">Journal</a>
+            <a href="#" style="border: 2px solid var(--color-text); padding: 0.5rem 1rem;">Order Now</a>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="grid-item item-hero-text">
+            <h2>THE BAO THEORY.</h2>
+            <p>包子理论：关于街头风味的一次实验。<br>A street-level experiment in flavor and form.</p>
+        </div>
+        <div class="grid-item item-hero-img"></div>
+
+        <!-- Status Bar -->
+        <div class="grid-item item-status">
+            <span>● Status: Open Now</span>
+            <span>Today: Main St x 2nd Ave</span>
+            <span style="background: white; color: var(--color-accent); padding: 2px 10px;">Find Us →</span>
+        </div>
+
+        <!-- Menu Section -->
+        <div class="grid-item item-menu-header">
+            <h3>Protocol<br>01</h3>
+        </div>
+        <div class="item-menu-items">
+            <div class="grid-item menu-col">
+                <h4>Signature</h4>
+                <p>Classic Pork Belly. Pickles. Peanuts. Cilantro. 经典刈包。</p>
+            </div>
+            <div class="grid-item menu-col">
+                <h4>Chicken</h4>
+                <p>Szechuan Fried Chicken. Slaw. Chili Crisp. 川味炸鸡。</p>
+            </div>
+            <div class="grid-item menu-col">
+                <h4>Vegan</h4>
+                <p>Shiitake & Tofu. Scallion Oil. Ginger. 素食口蘑包。</p>
+            </div>
+        </div>
+
+        <!-- Location Section -->
+        <div class="grid-item item-map"></div>
+        <div class="grid-item item-schedule">
+            <h3>Weekly<br>Schedule</h3>
+            <div class="sched-row active">
+                <span>Today</span>
+                <span>Main St / 2nd Ave</span>
+            </div>
+            <div class="sched-row">
+                <span>Wed 03.11</span>
+                <span>Robson Sq</span>
+            </div>
+            <div class="sched-row">
+                <span>Thu 03.12</span>
+                <span>Kits Beach</span>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="grid-item item-footer">
+            <span>© 2024 THE BAO THEORY — VANCOUVER BC</span>
+            <span>IG / @BAOTHEORY</span>
+            <span>STREET BUT EDITORIAL</span>
+        </div>
+    </div>
+
+</body>
+</html>

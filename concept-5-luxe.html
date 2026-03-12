@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bao Theory | Concept 5: Minimal Luxe</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;700&display=swap');
+
+        :root {
+            --color-bg: #F8F7F4;
+            --color-text: #1a1a1a;
+            --color-accent: #CB0D00;
+            --font-main: 'Inter', sans-serif;
+            --font-serif: 'Playfair Display', serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--color-bg); 
+            color: var(--color-text); 
+            font-family: var(--font-main); 
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            padding: 3rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            gap: 3rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 400;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+        nav a:hover { opacity: 1; }
+
+        .hero {
+            padding: 8rem 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            max-width: 500px;
+        }
+
+        .hero-text h1 {
+            font-family: var(--font-serif);
+            font-size: 5rem;
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            margin-bottom: 3rem;
+        }
+
+        .hero-img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background: url('https://images.unsplash.com/photo-1528667853127-14f706fd4d23?auto=format&fit=crop&q=80&w=1200') center center;
+            background-size: cover;
+            filter: sepia(0.2) contrast(1.1);
+        }
+
+        .section {
+            padding: 8rem 4rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-serif);
+            font-size: 3.5rem;
+            font-weight: 400;
+        }
+
+        .section-header .meta {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.5;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+        }
+
+        .menu-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-item .img {
+            width: 100%;
+            aspect-ratio: 1;
+            background-color: #eee;
+            margin-bottom: 2rem;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .menu-item h3 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-item .price {
+            font-size: 0.9rem;
+            opacity: 0.5;
+            margin-bottom: 1rem;
+        }
+
+        .menu-item .desc {
+            font-size: 0.95rem;
+            opacity: 0.7;
+            line-height: 1.5;
+        }
+
+        .location-section {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 6rem;
+        }
+
+        .schedule-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .schedule-row .day { font-weight: 700; font-size: 1.1rem; }
+        .schedule-row .location { font-family: var(--font-serif); font-style: italic; font-size: 1.2rem; }
+        .schedule-row.active { color: var(--color-accent); }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 1.5rem 3rem;
+            background: var(--color-text);
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.8rem;
+            transition: background 0.3s;
+        }
+        .cta-btn:hover { background: var(--color-accent); }
+
+        footer {
+            padding: 6rem 4rem;
+            background: #1a1a1a;
+            color: #f8f7f4;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            header { padding: 1.5rem; border-bottom: none; }
+            .logo { font-size: 1.25rem; }
+            nav { gap: 1rem; }
+            nav a { font-size: 0.65rem; }
+            
+            .hero { padding: 3rem 1.5rem; grid-template-columns: 1fr; gap: 3rem; }
+            .hero-text h1 { font-size: 15vw; margin-bottom: 1.5rem; text-align: center; }
+            .hero-text p { font-size: 1rem; text-align: center; margin-bottom: 2.5rem; padding: 0 0.5rem; }
+            .cta-btn { width: 100%; text-align: center; padding: 1.25rem; }
+            
+            .section { padding: 4rem 1.5rem; }
+            .section-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; margin-bottom: 2.5rem; }
+            .section-header h2 { font-size: 2.5rem; }
+            .section-header .meta { font-size: 0.7rem; }
+            
+            .menu-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .menu-item h3 { font-size: 1.6rem; }
+            
+            .location-section { grid-template-columns: 1fr; gap: 4rem; }
+            .schedule-row { padding: 1.25rem 0; }
+            .schedule-row .day { font-size: 1rem; }
+            .schedule-row .location { font-size: 1.1rem; }
+            
+            footer { padding: 4rem 1.5rem; flex-direction: column; text-align: center; gap: 2rem; }
+            .footer-logo { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Bao Theory</div>
+        <nav>
+            <a href="#">The Menu</a>
+            <a href="#">Coordinates</a>
+            <a href="#">Our Story</a>
+            <a href="#" style="opacity: 1; border-bottom: 1px solid var(--color-accent); color: var(--color-accent);">Order Now</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Refined<br>Street Food.</h1>
+            <p>A nomadic kitchen exploring the intersection of traditional street food and modern editorial design. Form follows flavor.</p>
+            <a href="#" class="cta-btn">Experience the Theory</a>
+        </div>
+        <div class="hero-img"></div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <h2>The Lineup</h2>
+            <div class="meta">Protocol 01 — Signature Items</div>
+        </div>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <div class="img" style="background-image: url('https://images.unsplash.com/photo-1534422298391-e4f8c170db06?auto=format&fit=crop&q=80&w=600')"></div>
+                <h3>Theory No. 1</h3>
+                <div class="price">$9.00 USD</div>
+                <div class="desc">Slow-braised pork belly, traditional pickles, crushed peanuts, and fresh cilantro. A classic re-imagined.</div>
+            </div>
+            <div class="menu-item">
+                <div class="img" style="background-image: url('https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&q=80&w=600')"></div>
+                <h3>Szechuan Bird</h3>
+                <div class="price">$8.50 USD</div>
+                <div class="desc">Crispy fried chicken glazed with house-made mala sauce, topped with chili crisp mayo and refreshing slaw.</div>
+            </div>
+            <div class="menu-item">
+                <div class="img" style="background-image: url('https://images.unsplash.com/photo-1563245332-692e7c56023a?auto=format&fit=crop&q=80&w=600')"></div>
+                <h3>Earth Theory</h3>
+                <div class="price">$8.00 USD</div>
+                <div class="desc">Braised shiitake mushrooms and delicate tofu skin, finished with a ginger-scallion oil infusion. Vegan.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="location-section">
+            <div>
+                <div class="section-header">
+                    <h2>Where to Find Us</h2>
+                </div>
+                <div class="schedule-row active">
+                    <span class="day">Monday</span>
+                    <span class="location">Main St x 2nd Ave</span>
+                </div>
+                <div class="schedule-row">
+                    <span class="day">Tuesday</span>
+                    <span class="location">Robson Square</span>
+                </div>
+                <div class="schedule-row">
+                    <span class="day">Wednesday</span>
+                    <span class="location">Kitsilano Beach</span>
+                </div>
+                <div class="schedule-row">
+                    <span class="day">Thursday</span>
+                    <span class="location">Gastown</span>
+                </div>
+                <div class="schedule-row">
+                    <span class="day">Friday</span>
+                    <span class="location">Mount Pleasant</span>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column; justify-content: center; align-items: flex-start;">
+                <p style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 2rem;">"The theory is simple: nomadic by nature, premium by choice."</p>
+                <a href="#" class="cta-btn">View Map</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">Bao Theory</div>
+        <div>
+            <p style="opacity: 0.5; margin-bottom: 1rem;">© 2024 BAO THEORY — VANCOUVER</p>
+            <p>Instagram / Email / Terms</p>
+        </div>
+    </footer>
+
+</body>
+</html>
