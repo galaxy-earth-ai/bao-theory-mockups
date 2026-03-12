@@ -198,6 +198,43 @@
 
         footer { padding: 4rem 2rem; display: flex; justify-content: space-between; font-weight: 700; text-transform: uppercase; font-size: 0.9rem; }
 
+        /* Mobile Nav Overlay */
+        .mobile-nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--color-accent);
+            color: white;
+            z-index: 200;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            transform: translateY(-100%);
+            transition: transform 0.4s cubic-bezier(0.9, 0, 0.1, 1);
+        }
+        .mobile-nav-overlay.active { transform: translateY(0); }
+        .mobile-nav-overlay a {
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: white;
+            margin-bottom: 2rem;
+            line-height: 1;
+        }
+        .close-nav {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-weight: 900;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
         @media (max-width: 768px) {
             .hero-container { height: 90vh; }
             .hero h1 { font-size: 15vw; margin-bottom: 2rem; }
@@ -227,6 +264,14 @@
 </head>
 <body>
 
+    <div class="mobile-nav-overlay" id="mobileNav">
+        <div class="close-nav" onclick="document.getElementById('mobileNav').classList.remove('active')">CLOSE</div>
+        <a href="#" onclick="document.getElementById('mobileNav').classList.remove('active')">Menu</a>
+        <a href="#" onclick="document.getElementById('mobileNav').classList.remove('active')">Schedule</a>
+        <a href="#" onclick="document.getElementById('mobileNav').classList.remove('active')">What's On</a>
+        <a href="#" onclick="document.getElementById('mobileNav').classList.remove('active')">Order Now</a>
+    </div>
+
     <header>
         <div class="logo">BAO THEORY</div>
         <nav>
@@ -235,7 +280,7 @@
             <a href="#">What's On</a>
             <a href="#" style="color: var(--color-accent)">Order Now</a>
         </nav>
-        <div class="mobile-nav-toggle">MENU</div>
+        <div class="mobile-nav-toggle" onclick="document.getElementById('mobileNav').classList.add('active')">MENU</div>
     </header>
 
     <div class="utility-bar">
