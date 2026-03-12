@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bao Theory — Tailwind Concept 04 / Zine Collage</title>
+  <meta name="description" content="Bao Theory Tailwind remake of the Zine Collage concept — layered collage energy with cleaner access to menu, location, and schedule.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Jost:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mist: '#F1EFEA',
+            paper: '#FFFDF8',
+            bao: '#FFF4D9',
+            ink: '#17140D',
+            taste: '#CB0D00',
+            tape: '#E7E1CF'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            geometric: ['Jost', 'Inter', 'sans-serif'],
+            mono: ['IBM Plex Mono', 'monospace'],
+            serif: ['Cormorant Garamond', 'serif']
+          },
+          boxShadow: {
+            hard: '8px 8px 0 #17140D'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-mist text-ink antialiased">
+  <main class="min-h-screen overflow-x-hidden bg-[radial-gradient(circle_at_top_left,_rgba(203,13,0,0.14),_transparent_22%),radial-gradient(circle_at_80%_22%,_rgba(255,244,217,0.9),_transparent_18%)] px-4 py-5 md:px-8 md:py-8">
+    <div class="mx-auto max-w-7xl">
+      <header class="mb-8 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+        <a href="index.html" class="inline-flex w-fit -rotate-2 border-2 border-ink bg-taste px-5 py-3 font-geometric text-2xl font-extrabold uppercase tracking-[-0.06em] text-paper shadow-hard md:text-4xl">Bao Theory</a>
+        <nav class="flex w-fit flex-wrap gap-3 border-2 border-ink bg-paper px-4 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.24em] shadow-hard md:gap-5">
+          <a href="#menu" class="hover:text-taste">Menu</a>
+          <a href="#schedule" class="hover:text-taste">Schedule</a>
+          <a href="#drop" class="hover:text-taste">Drop</a>
+          <a href="#cta" class="text-taste">Orders</a>
+        </nav>
+      </header>
+
+      <section class="relative grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+        <div class="relative">
+          <div class="absolute left-6 top-4 z-20 hidden h-12 w-32 -rotate-12 border border-ink/10 bg-tape/85 lg:block"></div>
+          <div class="absolute right-10 top-[78%] z-20 hidden h-12 w-36 rotate-[16deg] border border-ink/10 bg-tape/85 lg:block"></div>
+          <div class="relative rotate-[-1.5deg] overflow-hidden border-2 border-ink bg-paper p-3 shadow-hard">
+            <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1400&q=80" alt="Bao hero in zine collage layout" class="h-[24rem] w-full object-cover md:h-[36rem]">
+          </div>
+          <div class="relative z-10 -mt-10 ml-auto max-w-md rotate-[2deg] border-2 border-ink bg-paper p-5 shadow-hard md:-mt-16 md:mr-6 md:p-6">
+            <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-ink/60">Tailwind remake / concept 04</p>
+            <h1 class="mt-3 font-geometric text-5xl font-extrabold uppercase leading-[0.84] tracking-[-0.08em] text-taste md:text-7xl">Feed the theory.</h1>
+            <p class="mt-4 font-serif text-2xl leading-tight md:text-3xl">Street chaos, but placed with intent.</p>
+          </div>
+        </div>
+
+        <div class="space-y-5 lg:pt-10">
+          <div class="-rotate-1 border-2 border-ink bg-ink p-5 text-bao shadow-hard md:p-6">
+            <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-bao/60">Today’s loud facts</p>
+            <div class="mt-4 grid gap-4 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+              <div>
+                <p class="text-xs uppercase tracking-[0.22em] text-bao/60">Status</p>
+                <p class="mt-2 font-geometric text-2xl font-extrabold uppercase">Open now</p>
+              </div>
+              <div>
+                <p class="text-xs uppercase tracking-[0.22em] text-bao/60">Location</p>
+                <p class="mt-2 font-geometric text-2xl font-extrabold uppercase">Main St + 2nd</p>
+              </div>
+              <div>
+                <p class="text-xs uppercase tracking-[0.22em] text-bao/60">Hours</p>
+                <p class="mt-2 font-geometric text-2xl font-extrabold uppercase">11 — 9</p>
+              </div>
+            </div>
+          </div>
+
+          <div id="drop" class="rotate-[1.3deg] border-2 border-ink bg-bao p-5 shadow-hard md:p-6">
+            <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-ink/60">Sticker note</p>
+            <h2 class="mt-3 font-geometric text-4xl font-extrabold uppercase leading-[0.9] tracking-[-0.06em]">This version keeps the collage, but makes the info block impossible to miss.</h2>
+            <p class="mt-4 text-sm leading-7 text-ink/78">The original zine direction was the loosest. This remake preserves the stickers, overlap, and rawness, then disciplines the utility layer so it still works like a homepage.</p>
+          </div>
+
+          <div class="ml-auto flex h-32 w-32 rotate-[12deg] items-center justify-center rounded-full border-2 border-ink bg-taste p-4 text-center font-geometric text-lg font-extrabold uppercase leading-none text-paper shadow-hard md:h-40 md:w-40 md:text-xl">Street bao<br>Vancouver<br>Est. 24</div>
+        </div>
+      </section>
+
+      <section class="mt-10 grid gap-8 lg:grid-cols-[0.9fr_0.74fr_0.86fr]">
+        <article id="menu" class="rotate-[-1.2deg] border-2 border-ink bg-paper p-6 shadow-hard md:p-7">
+          <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-ink/60">The lineup</p>
+          <h2 class="mt-3 font-geometric text-4xl font-extrabold uppercase tracking-[-0.06em]">Menu</h2>
+          <div class="mt-6 space-y-5">
+            <div class="border-b border-dashed border-ink/30 pb-4">
+              <div class="flex items-end justify-between gap-3">
+                <h3 class="font-geometric text-2xl font-extrabold uppercase tracking-[-0.05em]">Signature Pork</h3>
+                <span class="font-mono text-sm font-semibold text-taste">$9</span>
+              </div>
+              <p class="mt-2 text-sm leading-6 text-ink/80">Braised belly + pickles + peanut crunch.</p>
+            </div>
+            <div class="border-b border-dashed border-ink/30 pb-4">
+              <div class="flex items-end justify-between gap-3">
+                <h3 class="font-geometric text-2xl font-extrabold uppercase tracking-[-0.05em]">Szechuan Hot</h3>
+                <span class="font-mono text-sm font-semibold text-taste">$8.5</span>
+              </div>
+              <p class="mt-2 text-sm leading-6 text-ink/80">Fried chicken + mala glaze + chili mayo.</p>
+            </div>
+            <div>
+              <div class="flex items-end justify-between gap-3">
+                <h3 class="font-geometric text-2xl font-extrabold uppercase tracking-[-0.05em]">Mushroom Theory</h3>
+                <span class="font-mono text-sm font-semibold text-taste">$8</span>
+              </div>
+              <p class="mt-2 text-sm leading-6 text-ink/80">Shiitake + ginger scallion oil + sesame greens.</p>
+            </div>
+          </div>
+        </article>
+
+        <article id="schedule" class="translate-y-4 rotate-[1.4deg] border-2 border-ink bg-ink p-6 text-bao shadow-hard md:p-7">
+          <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-bao/60">Schedule note</p>
+          <h2 class="mt-3 font-geometric text-4xl font-extrabold uppercase tracking-[-0.06em]">Where + when</h2>
+          <div class="mt-6 space-y-3 font-mono text-sm uppercase tracking-[0.15em]">
+            <div class="grid grid-cols-[auto_1fr_auto] gap-3 border border-taste bg-taste/10 px-3 py-3 font-semibold text-taste">
+              <span>Today</span>
+              <span>Main St + 2nd Ave</span>
+              <span>11—9</span>
+            </div>
+            <div class="grid grid-cols-[auto_1fr_auto] gap-3 border border-bao/15 px-3 py-3">
+              <span>Thu</span>
+              <span>Robson Square</span>
+              <span>11—4</span>
+            </div>
+            <div class="grid grid-cols-[auto_1fr_auto] gap-3 border border-bao/15 px-3 py-3">
+              <span>Fri</span>
+              <span>Gastown</span>
+              <span>12—8</span>
+            </div>
+            <div class="grid grid-cols-[auto_1fr_auto] gap-3 border border-bao/15 px-3 py-3">
+              <span>Sat</span>
+              <span>Kits Beach</span>
+              <span>12—8</span>
+            </div>
+          </div>
+        </article>
+
+        <div class="space-y-6 lg:-translate-y-2">
+          <div class="rotate-[-2deg] overflow-hidden border-2 border-ink bg-paper p-3 shadow-hard">
+            <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=1000&q=80" alt="Close up detail for zine collage concept" class="h-60 w-full object-cover md:h-72">
+          </div>
+          <div class="rotate-[1deg] border-2 border-ink bg-paper p-5 shadow-hard md:p-6">
+            <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-ink/60">Why it works better</p>
+            <p class="mt-3 text-sm leading-7 text-ink/80">The collage is still loud, but the hierarchy is more deliberate: headline, facts, menu, schedule, then atmosphere — in that order.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="cta" class="mt-12 flex flex-col gap-4 border-t-2 border-ink pt-8 md:flex-row md:items-center md:justify-between">
+        <div>
+          <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-ink/60">Exit sticker</p>
+          <h2 class="mt-3 font-geometric text-5xl font-extrabold uppercase leading-[0.9] tracking-[-0.07em] md:text-6xl">Show up hungry.</h2>
+        </div>
+        <div class="flex flex-col gap-3 sm:flex-row">
+          <a href="index.html" class="inline-flex items-center justify-center border-2 border-ink bg-paper px-5 py-4 font-geometric text-xs font-bold uppercase tracking-[0.22em] shadow-hard transition hover:bg-ink hover:text-paper">Back to gallery</a>
+          <a href="#" class="inline-flex items-center justify-center border-2 border-ink bg-taste px-5 py-4 font-geometric text-xs font-bold uppercase tracking-[0.22em] text-paper shadow-hard transition hover:bg-ink">Get directions</a>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

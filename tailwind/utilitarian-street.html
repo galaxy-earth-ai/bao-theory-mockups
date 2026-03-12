@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bao Theory — Tailwind Concept 03 / Utilitarian Street</title>
+  <meta name="description" content="Bao Theory Tailwind remake of the Utilitarian Street concept — dispatch-board UX, strong schedule visibility, and operational street energy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            shell: '#DFDDD4',
+            panel: '#EFEEE8',
+            ink: '#111111',
+            taste: '#CB0D00',
+            signal: '#E6D261'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['IBM Plex Mono', 'monospace']
+          },
+          boxShadow: {
+            hard: '6px 6px 0 #111111'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-shell font-mono text-ink antialiased">
+  <main class="min-h-screen p-3 md:p-5">
+    <div class="mx-auto max-w-7xl space-y-3">
+      <header class="border-2 border-ink bg-panel p-4 shadow-hard md:p-5">
+        <div class="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+          <div>
+            <a href="index.html" class="inline-flex bg-ink px-4 py-3 text-2xl font-bold uppercase tracking-[-0.06em] text-shell md:text-4xl">BAO THEORY</a>
+            <p class="mt-3 text-[11px] uppercase tracking-[0.3em] text-ink/65">Street operations / tailwind remake / concept 03</p>
+          </div>
+          <nav class="grid gap-2 text-xs font-semibold uppercase tracking-[0.22em] md:text-right">
+            <a href="#inventory" class="hover:text-taste">[01_menu]</a>
+            <a href="#deployment" class="hover:text-taste">[02_schedule]</a>
+            <a href="#signals" class="hover:text-taste">[03_status]</a>
+            <a href="#cta" class="inline-flex justify-center bg-taste px-3 py-2 text-shell md:justify-end">[order_now]</a>
+          </nav>
+        </div>
+      </header>
+
+      <section class="grid gap-3 lg:grid-cols-[1.15fr_0.85fr]" id="signals">
+        <div class="border-2 border-ink bg-panel p-4 shadow-hard md:p-6">
+          <div class="grid gap-4 md:grid-cols-2">
+            <div>
+              <p class="text-[11px] uppercase tracking-[0.3em] text-ink/60">Current coordinates</p>
+              <h1 class="mt-4 text-4xl font-bold uppercase leading-none tracking-[-0.07em] md:text-6xl">Main St<br>&amp; 2nd Ave</h1>
+              <div class="mt-5 inline-flex bg-signal px-4 py-2 text-sm font-bold uppercase tracking-[0.18em]">● Live / open until 21:00</div>
+            </div>
+            <div class="border-t border-ink pt-4 md:border-l md:border-t-0 md:pl-6 md:pt-0">
+              <p class="text-[11px] uppercase tracking-[0.3em] text-ink/60">Mission statement</p>
+              <p class="mt-4 max-w-md font-sans text-sm leading-7 text-ink/80 md:text-base">The original utilitarian route leaned hard into brutalism. This remake keeps the dispatch-board attitude, but uses a tighter system so schedule, service mode, and menu data feel intentionally designed instead of only aggressive.</p>
+            </div>
+          </div>
+        </div>
+        <div class="border-2 border-ink bg-ink p-4 text-shell shadow-hard md:p-6">
+          <p class="text-[11px] uppercase tracking-[0.3em] text-shell/60">Status board</p>
+          <div class="mt-5 grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+            <div>
+              <p class="text-[11px] uppercase tracking-[0.22em] text-shell/55">Mode</p>
+              <p class="mt-2 text-3xl font-bold uppercase tracking-[-0.06em] text-signal">Open now</p>
+            </div>
+            <div>
+              <p class="text-[11px] uppercase tracking-[0.22em] text-shell/55">Pickup</p>
+              <p class="mt-2 text-xl font-bold uppercase tracking-[-0.04em]">Available</p>
+            </div>
+            <div>
+              <p class="text-[11px] uppercase tracking-[0.22em] text-shell/55">Accent</p>
+              <p class="mt-2 text-xl font-bold uppercase tracking-[-0.04em] text-taste">Brand red for action</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid gap-3 lg:grid-cols-[0.78fr_1.22fr]">
+        <aside id="deployment" class="border-2 border-ink bg-panel p-4 shadow-hard md:p-6">
+          <div class="flex items-end justify-between gap-4 border-b-2 border-ink pb-4">
+            <div>
+              <p class="text-[11px] uppercase tracking-[0.3em] text-ink/60">Deployment</p>
+              <h2 class="mt-2 text-3xl font-bold uppercase tracking-[-0.06em]">Weekly schedule</h2>
+            </div>
+            <a href="#cta" class="text-[11px] uppercase tracking-[0.22em] text-taste">maps ↗</a>
+          </div>
+          <div class="mt-4 space-y-2 text-sm font-medium uppercase tracking-[0.14em]">
+            <div class="grid grid-cols-[auto_1fr_auto] gap-3 bg-ink px-3 py-3 text-shell">
+              <span>Wed</span>
+              <span>Main St + 2nd Ave</span>
+              <span class="text-signal">11—9</span>
+            </div>
+            <div class="grid grid-cols-[auto_1fr_auto] gap-3 border border-ink/20 px-3 py-3">
+              <span>Thu</span>
+              <span>Robson Square</span>
+              <span>11—4</span>
+            </div>
+            <div class="grid grid-cols-[auto_1fr_auto] gap-3 border border-ink/20 px-3 py-3">
+              <span>Fri</span>
+              <span>Gastown / Railtown</span>
+              <span>12—8</span>
+            </div>
+            <div class="grid grid-cols-[auto_1fr_auto] gap-3 border border-ink/20 px-3 py-3">
+              <span>Sat</span>
+              <span>Kits Beach</span>
+              <span>12—8</span>
+            </div>
+            <div class="grid grid-cols-[auto_1fr_auto] gap-3 border border-ink/20 px-3 py-3">
+              <span>Sun</span>
+              <span>Mount Pleasant</span>
+              <span>12—6</span>
+            </div>
+          </div>
+        </aside>
+
+        <section id="inventory" class="border-2 border-ink bg-panel p-4 shadow-hard md:p-6">
+          <div class="flex flex-col gap-4 border-b-2 border-ink pb-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p class="text-[11px] uppercase tracking-[0.3em] text-ink/60">Inventory list</p>
+              <h2 class="mt-2 text-3xl font-bold uppercase tracking-[-0.06em]">Menu + field notes</h2>
+            </div>
+            <p class="max-w-md font-sans text-sm leading-6 text-ink/75">Discoverability is the upgrade: the menu remains coded and street-level, but the descriptions are cleaner and the action state is obvious at a glance.</p>
+          </div>
+          <div class="mt-4 space-y-4">
+            <article class="grid gap-3 border-b border-ink pb-4 md:grid-cols-[auto_1fr_auto] md:items-start">
+              <p class="text-xs uppercase tracking-[0.24em] text-ink/55">BT-01</p>
+              <div>
+                <div class="flex flex-wrap items-baseline gap-3">
+                  <h3 class="text-2xl font-bold uppercase tracking-[-0.05em]">Classic Pork Theory</h3>
+                  <span class="text-xs uppercase tracking-[0.22em] text-taste">Foundation item</span>
+                </div>
+                <p class="mt-2 max-w-2xl font-sans text-sm leading-6 text-ink/78">Braised pork belly, pickled mustard, crushed peanut, cilantro. The grounding protocol.</p>
+              </div>
+              <p class="text-base font-bold">$9.00</p>
+            </article>
+            <article class="grid gap-3 border-b border-ink pb-4 md:grid-cols-[auto_1fr_auto] md:items-start">
+              <p class="text-xs uppercase tracking-[0.24em] text-ink/55">BT-02</p>
+              <div>
+                <div class="flex flex-wrap items-baseline gap-3">
+                  <h3 class="text-2xl font-bold uppercase tracking-[-0.05em]">Szechuan Hot Bird</h3>
+                  <span class="text-xs uppercase tracking-[0.22em] text-taste">High heat</span>
+                </div>
+                <p class="mt-2 max-w-2xl font-sans text-sm leading-6 text-ink/78">Fried chicken, mala honey glaze, slaw, and chili mayo. Keeps the original’s rawness, trims the clutter.</p>
+              </div>
+              <p class="text-base font-bold">$8.50</p>
+            </article>
+            <article class="grid gap-3 md:grid-cols-[auto_1fr_auto] md:items-start">
+              <p class="text-xs uppercase tracking-[0.24em] text-ink/55">BT-03</p>
+              <div>
+                <div class="flex flex-wrap items-baseline gap-3">
+                  <h3 class="text-2xl font-bold uppercase tracking-[-0.05em]">Fungal Logic</h3>
+                  <span class="text-xs uppercase tracking-[0.22em] text-taste">Plant-based</span>
+                </div>
+                <p class="mt-2 max-w-2xl font-sans text-sm leading-6 text-ink/78">Shiitake, tofu skin, ginger-scallion oil. A quieter line item in a still-loud system.</p>
+              </div>
+              <p class="text-base font-bold">$8.00</p>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section class="grid gap-3 lg:grid-cols-[1.08fr_0.92fr]" id="cta">
+        <div class="grid gap-3 sm:grid-cols-3">
+          <img src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?auto=format&fit=crop&w=900&q=80" alt="Bao close-up 1" class="h-52 w-full border-2 border-ink object-cover shadow-hard grayscale">
+          <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=900&q=80" alt="Bao close-up 2" class="h-52 w-full border-2 border-ink object-cover shadow-hard grayscale">
+          <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=80" alt="Bao close-up 3" class="h-52 w-full border-2 border-ink object-cover shadow-hard grayscale">
+        </div>
+        <div class="border-2 border-ink bg-panel p-4 shadow-hard md:p-6">
+          <p class="text-[11px] uppercase tracking-[0.3em] text-ink/60">Exit command</p>
+          <h2 class="mt-3 text-4xl font-bold uppercase leading-none tracking-[-0.07em] md:text-5xl">Locate. Order. Repeat.</h2>
+          <p class="mt-4 max-w-xl font-sans text-sm leading-7 text-ink/78">The yellow signal remains as a utility cue, but brand red now carries the CTA so the system feels more Bao Theory and less anonymous industrial interface.</p>
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a href="index.html" class="inline-flex items-center justify-center border-2 border-ink px-5 py-4 text-xs font-bold uppercase tracking-[0.22em] transition hover:bg-ink hover:text-shell">Back to gallery</a>
+            <a href="#" class="inline-flex items-center justify-center bg-taste px-5 py-4 text-xs font-bold uppercase tracking-[0.22em] text-shell transition hover:bg-ink">Get directions</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

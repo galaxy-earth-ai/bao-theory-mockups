@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bao Theory — Tailwind Concept 02 / Editorial Grid</title>
+  <meta name="description" content="Bao Theory Tailwind remake of the Editorial Grid concept — structured modules, strong hierarchy, and clear menu/schedule blocks.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Jost:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bao: '#FFF4D9',
+            paper: '#F6F4ED',
+            ink: '#201C0D',
+            taste: '#CB0D00',
+            line: 'rgba(32,28,13,0.14)'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            geometric: ['Jost', 'Inter', 'sans-serif'],
+            mono: ['IBM Plex Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-paper text-ink antialiased">
+  <main class="min-h-screen p-3 md:p-5">
+    <div class="mx-auto grid max-w-[1440px] gap-px border border-ink bg-ink md:grid-cols-12">
+      <div class="bg-paper p-5 md:col-span-3 md:p-7">
+        <a href="index.html" class="font-geometric text-lg font-extrabold uppercase tracking-[0.24em]">Bao Theory</a>
+      </div>
+      <nav class="bg-paper p-5 font-geometric text-xs font-semibold uppercase tracking-[0.22em] md:col-span-9 md:flex md:items-center md:justify-end md:gap-8 md:p-7">
+        <div class="flex flex-wrap gap-4 md:gap-8">
+          <a href="#menu" class="transition hover:text-taste">Menu</a>
+          <a href="#schedule" class="transition hover:text-taste">Schedule</a>
+          <a href="#story" class="transition hover:text-taste">Concept note</a>
+          <a href="#cta" class="border border-ink px-4 py-2 transition hover:bg-ink hover:text-bao">Order now</a>
+        </div>
+      </nav>
+
+      <section class="bg-paper p-5 md:col-span-7 md:min-h-[36rem] md:p-8 lg:p-10">
+        <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-ink/55">Tailwind remake / concept 02 / editorial grid</p>
+        <h1 class="mt-8 max-w-4xl font-geometric text-[17vw] font-extrabold uppercase leading-[0.82] tracking-[-0.08em] sm:text-[6rem] lg:text-[8.5rem]">The Bao<br>Theory.</h1>
+        <p class="mt-8 max-w-xl border-t border-ink pt-5 text-base leading-7 text-ink/78 md:text-lg">This remake sharpens the magazine logic of the original with cleaner module rhythm, stronger label systems, and a dedicated information row for location + service state.</p>
+      </section>
+      <section class="relative bg-paper md:col-span-5 md:min-h-[36rem]">
+        <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=1200&q=80" alt="Editorial food shot for Bao Theory" class="h-full min-h-[18rem] w-full object-cover contrast-125 saturate-75">
+        <div class="absolute inset-x-4 bottom-4 border border-bao bg-ink/85 p-4 text-bao backdrop-blur md:inset-x-6 md:bottom-6">
+          <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-bao/60">Field note</p>
+          <p class="mt-2 font-geometric text-2xl font-bold uppercase tracking-[0.08em]">Street food, edited hard.</p>
+        </div>
+      </section>
+
+      <section class="bg-taste p-5 text-bao md:col-span-12 md:grid md:grid-cols-3 md:items-center md:gap-6 md:px-8 md:py-4">
+        <div>
+          <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-bao/70">Status</p>
+          <p class="mt-1 font-geometric text-2xl font-extrabold uppercase">Open now</p>
+        </div>
+        <div>
+          <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-bao/70">Today’s location</p>
+          <p class="mt-1 font-geometric text-xl font-bold uppercase tracking-[0.08em]">Main St + 2nd Ave</p>
+        </div>
+        <div class="md:text-right">
+          <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-bao/70">Service</p>
+          <p class="mt-1 font-geometric text-xl font-bold uppercase tracking-[0.08em]">11:00 — 21:00</p>
+        </div>
+      </section>
+
+      <section class="bg-paper p-5 md:col-span-3 md:p-8" id="menu">
+        <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-ink/55">Menu protocol</p>
+        <h2 class="mt-4 font-geometric text-5xl font-extrabold uppercase leading-[0.9] tracking-[-0.06em]">Lineup<br>01</h2>
+        <p class="mt-5 max-w-xs text-sm leading-6 text-ink/75">The grid stays strict, but the menu reads faster: one category, one clear name, one sharp description.</p>
+      </section>
+      <section class="bg-paper md:col-span-9">
+        <div class="grid gap-px bg-ink md:grid-cols-3">
+          <article class="bg-paper p-5 md:p-8">
+            <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/55">01 / Signature</p>
+            <h3 class="mt-6 font-geometric text-3xl font-extrabold uppercase tracking-[-0.05em]">Classic Pork</h3>
+            <p class="mt-2 font-mono text-sm font-semibold">$9.00</p>
+            <p class="mt-5 text-sm leading-6 text-ink/78">Braised pork belly, pickled mustard, peanut crunch, cilantro, soft bao.</p>
+          </article>
+          <article class="bg-paper p-5 md:p-8">
+            <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/55">02 / Hot</p>
+            <h3 class="mt-6 font-geometric text-3xl font-extrabold uppercase tracking-[-0.05em]">Chili Chicken</h3>
+            <p class="mt-2 font-mono text-sm font-semibold">$8.50</p>
+            <p class="mt-5 text-sm leading-6 text-ink/78">Crisp chicken, mala glaze, slaw, and chili mayo with a sharper contrast than the original version.</p>
+          </article>
+          <article class="bg-paper p-5 md:p-8">
+            <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/55">03 / Plant</p>
+            <h3 class="mt-6 font-geometric text-3xl font-extrabold uppercase tracking-[-0.05em]">Mushroom Oil</h3>
+            <p class="mt-2 font-mono text-sm font-semibold">$8.00</p>
+            <p class="mt-5 text-sm leading-6 text-ink/78">Shiitake, tofu skin, ginger-scallion oil, and sesame greens. Quiet layout, loud flavor.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="relative bg-paper md:col-span-6 md:min-h-[27rem]">
+        <img src="https://images.unsplash.com/photo-1513639776629-7b61b0ac49cb?auto=format&fit=crop&w=1400&q=80" alt="Neighborhood street map mood" class="h-full min-h-[20rem] w-full object-cover grayscale contrast-110">
+        <div class="absolute inset-4 border border-bao bg-paper/92 p-4 md:inset-auto md:bottom-6 md:left-6 md:w-[18rem]">
+          <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/55">Find us</p>
+          <p class="mt-2 font-geometric text-2xl font-extrabold uppercase leading-tight">Main St &amp;<br>East 2nd Ave</p>
+          <p class="mt-3 text-sm leading-6 text-ink/75">Easy to scan, easy to share. Directions stay in the main grid instead of becoming a stray footer detail.</p>
+        </div>
+      </section>
+      <section class="bg-paper p-5 md:col-span-6 md:p-8" id="schedule">
+        <div class="flex items-end justify-between gap-4 border-b border-ink pb-4">
+          <div>
+            <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/55">Schedule</p>
+            <h2 class="mt-2 font-geometric text-4xl font-extrabold uppercase tracking-[-0.05em]">Weekly board</h2>
+          </div>
+          <a href="#cta" class="font-mono text-[11px] uppercase tracking-[0.22em] text-taste">Maps ↗</a>
+        </div>
+        <div class="mt-5 space-y-3 font-geometric text-sm uppercase tracking-[0.16em]">
+          <div class="grid grid-cols-[auto_1fr_auto] gap-4 border border-taste bg-taste/8 px-4 py-3 font-bold text-taste">
+            <span>Today</span>
+            <span>Main St + 2nd Ave</span>
+            <span>11—9</span>
+          </div>
+          <div class="grid grid-cols-[auto_1fr_auto] gap-4 border border-ink/15 px-4 py-3">
+            <span>Thu</span>
+            <span>Robson Square</span>
+            <span>11—4</span>
+          </div>
+          <div class="grid grid-cols-[auto_1fr_auto] gap-4 border border-ink/15 px-4 py-3">
+            <span>Fri</span>
+            <span>Gastown / Railtown</span>
+            <span>12—8</span>
+          </div>
+          <div class="grid grid-cols-[auto_1fr_auto] gap-4 border border-ink/15 px-4 py-3">
+            <span>Sat</span>
+            <span>Kits Beach</span>
+            <span>12—8</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-bao p-5 md:col-span-7 md:p-8" id="story">
+        <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-ink/55">Difference from original</p>
+        <p class="mt-4 max-w-3xl text-base leading-7 text-ink/80 md:text-lg">The original Editorial Grid already had strong bones. This Tailwind remake makes the hierarchy calmer and more legible, reduces visual noise between modules, and gives the status/location/schedule row a more important role in the composition.</p>
+      </section>
+      <section class="bg-paper p-5 md:col-span-5 md:p-8" id="cta">
+        <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/55">Next step</p>
+        <h2 class="mt-3 font-geometric text-5xl font-extrabold uppercase leading-[0.9] tracking-[-0.06em]">Read it fast. Eat it faster.</h2>
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+          <a href="index.html" class="inline-flex items-center justify-center border-2 border-ink px-5 py-4 font-geometric text-xs font-bold uppercase tracking-[0.22em] transition hover:bg-ink hover:text-bao">Back to gallery</a>
+          <a href="#" class="inline-flex items-center justify-center bg-ink px-5 py-4 font-geometric text-xs font-bold uppercase tracking-[0.22em] text-bao transition hover:bg-taste">Get directions</a>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

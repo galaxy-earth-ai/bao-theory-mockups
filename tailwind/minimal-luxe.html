@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bao Theory — Tailwind Concept 05 / Minimal Luxe</title>
+  <meta name="description" content="Bao Theory Tailwind remake of the Minimal Luxe concept — quiet luxury, strong product framing, and elegant but direct utility blocks.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#F6F4ED',
+            shell: '#FFF4D9',
+            ink: '#201C0D',
+            taste: '#CB0D00',
+            blush: '#E8E0D2'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['Cormorant Garamond', 'serif'],
+            mono: ['IBM Plex Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-paper text-ink antialiased">
+  <main class="min-h-screen bg-[radial-gradient(circle_at_top_right,_rgba(203,13,0,0.08),_transparent_22%),linear-gradient(180deg,_#faf8f1,_#f6f4ed)]">
+    <header class="mx-auto flex max-w-7xl flex-col gap-4 border-b border-ink/10 px-4 py-6 md:flex-row md:items-center md:justify-between md:px-8 md:py-8">
+      <a href="index.html" class="font-serif text-3xl font-semibold uppercase tracking-[0.18em]">Bao Theory</a>
+      <nav class="flex flex-wrap gap-5 font-mono text-[11px] uppercase tracking-[0.24em] text-ink/60 md:gap-8">
+        <a href="#menu" class="hover:text-taste">Menu</a>
+        <a href="#schedule" class="hover:text-taste">Schedule</a>
+        <a href="#story" class="hover:text-taste">Notes</a>
+        <a href="#cta" class="text-taste">Order now</a>
+      </nav>
+    </header>
+
+    <section class="mx-auto grid max-w-7xl gap-10 px-4 py-10 md:px-8 md:py-16 lg:grid-cols-[0.94fr_1.06fr] lg:items-center">
+      <div class="max-w-xl">
+        <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-ink/50">Tailwind remake / concept 05 / minimal luxe</p>
+        <h1 class="mt-6 font-serif text-6xl leading-[0.92] md:text-7xl lg:text-[5.7rem]">A quieter frame for louder flavor.</h1>
+        <p class="mt-6 text-base leading-8 text-ink/72 md:text-lg">The original luxe direction pushed Bao Theory toward premium hospitality. This remake keeps the refinement, but adds stronger utility framing so it feels elevated without losing the speed of a street-first brand.</p>
+        <div class="mt-8 grid gap-4 border-y border-ink/10 py-6 sm:grid-cols-3">
+          <div>
+            <p class="font-mono text-[11px] uppercase tracking-[0.24em] text-ink/45">Today</p>
+            <p class="mt-2 text-base font-semibold">Main St + 2nd</p>
+          </div>
+          <div>
+            <p class="font-mono text-[11px] uppercase tracking-[0.24em] text-ink/45">Hours</p>
+            <p class="mt-2 text-base font-semibold">11:00 — 21:00</p>
+          </div>
+          <div>
+            <p class="font-mono text-[11px] uppercase tracking-[0.24em] text-ink/45">Service</p>
+            <p class="mt-2 text-base font-semibold text-taste">Open now</p>
+          </div>
+        </div>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a href="#menu" class="inline-flex items-center justify-center bg-ink px-6 py-4 font-mono text-[11px] uppercase tracking-[0.26em] text-paper transition hover:bg-taste">View menu</a>
+          <a href="#schedule" class="inline-flex items-center justify-center border border-ink/20 px-6 py-4 font-mono text-[11px] uppercase tracking-[0.26em] transition hover:border-ink hover:bg-shell">Find us today</a>
+        </div>
+      </div>
+
+      <div class="grid gap-5 lg:grid-cols-[0.78fr_0.22fr] lg:items-stretch">
+        <div class="overflow-hidden border border-ink/10 bg-shell">
+          <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=1200&q=80" alt="Refined bao editorial image" class="h-full min-h-[28rem] w-full object-cover contrast-110 saturate-90">
+        </div>
+        <div class="grid gap-5">
+          <div class="border border-ink/10 bg-paper p-5">
+            <p class="font-mono text-[11px] uppercase tracking-[0.24em] text-ink/45">Mood</p>
+            <p class="mt-3 font-serif text-3xl leading-tight">Street food with a tailored edge.</p>
+          </div>
+          <div class="flex items-end border border-ink/10 bg-ink p-5 text-paper">
+            <div>
+              <p class="font-mono text-[11px] uppercase tracking-[0.24em] text-paper/50">Drop</p>
+              <p class="mt-3 font-serif text-3xl leading-tight">New chili crisp chicken this week.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="mx-auto max-w-7xl border-t border-ink/10 px-4 py-10 md:px-8 md:py-16">
+      <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-ink/50">The menu</p>
+          <h2 class="mt-3 font-serif text-5xl md:text-6xl">Small lineup. Strong point of view.</h2>
+        </div>
+        <p class="max-w-xl text-sm leading-7 text-ink/68">Compared with the original, the remake strips some ornament and lets contrast, whitespace, and direct information do more work.</p>
+      </div>
+      <div class="mt-10 grid gap-8 md:grid-cols-3">
+        <article>
+          <div class="overflow-hidden bg-blush">
+            <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=80" alt="Classic pork bao" class="h-72 w-full object-cover">
+          </div>
+          <h3 class="mt-5 font-serif text-4xl">Classic Pork</h3>
+          <p class="mt-2 font-mono text-[11px] uppercase tracking-[0.24em] text-ink/50">$9.00</p>
+          <p class="mt-4 text-sm leading-7 text-ink/72">Braised pork belly, pickled mustard, peanut crunch, cilantro.</p>
+        </article>
+        <article>
+          <div class="overflow-hidden bg-blush">
+            <img src="https://images.unsplash.com/photo-1526318896980-cf78c088247c?auto=format&fit=crop&w=900&q=80" alt="Chili chicken bao" class="h-72 w-full object-cover">
+          </div>
+          <h3 class="mt-5 font-serif text-4xl">Chili Chicken</h3>
+          <p class="mt-2 font-mono text-[11px] uppercase tracking-[0.24em] text-ink/50">$8.50</p>
+          <p class="mt-4 text-sm leading-7 text-ink/72">Fried chicken, mala glaze, slaw, chili mayo.</p>
+        </article>
+        <article>
+          <div class="overflow-hidden bg-blush">
+            <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=900&q=80" alt="Mushroom bao" class="h-72 w-full object-cover">
+          </div>
+          <h3 class="mt-5 font-serif text-4xl">Earth Bao</h3>
+          <p class="mt-2 font-mono text-[11px] uppercase tracking-[0.24em] text-ink/50">$8.00</p>
+          <p class="mt-4 text-sm leading-7 text-ink/72">Shiitake, tofu skin, ginger scallion oil, sesame greens.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="schedule" class="mx-auto max-w-7xl border-t border-ink/10 px-4 py-10 md:px-8 md:py-16">
+      <div class="grid gap-10 lg:grid-cols-[1.25fr_0.75fr]">
+        <div>
+          <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-ink/50">Where to find us</p>
+          <h2 class="mt-3 font-serif text-5xl md:text-6xl">A refined schedule block that still behaves like utility.</h2>
+          <div class="mt-8 divide-y divide-ink/10 border-y border-ink/10">
+            <div class="grid gap-3 py-5 md:grid-cols-[0.6fr_1.2fr_0.4fr] md:items-center">
+              <p class="font-mono text-[11px] uppercase tracking-[0.24em] text-taste">Today</p>
+              <p class="font-serif text-3xl text-taste">Main St + 2nd Ave</p>
+              <p class="text-sm font-semibold text-taste md:text-right">11 — 9</p>
+            </div>
+            <div class="grid gap-3 py-5 md:grid-cols-[0.6fr_1.2fr_0.4fr] md:items-center">
+              <p class="font-mono text-[11px] uppercase tracking-[0.24em] text-ink/45">Thu</p>
+              <p class="font-serif text-3xl">Robson Square</p>
+              <p class="text-sm font-semibold md:text-right">11 — 4</p>
+            </div>
+            <div class="grid gap-3 py-5 md:grid-cols-[0.6fr_1.2fr_0.4fr] md:items-center">
+              <p class="font-mono text-[11px] uppercase tracking-[0.24em] text-ink/45">Fri</p>
+              <p class="font-serif text-3xl">Gastown / Railtown</p>
+              <p class="text-sm font-semibold md:text-right">12 — 8</p>
+            </div>
+            <div class="grid gap-3 py-5 md:grid-cols-[0.6fr_1.2fr_0.4fr] md:items-center">
+              <p class="font-mono text-[11px] uppercase tracking-[0.24em] text-ink/45">Sat</p>
+              <p class="font-serif text-3xl">Kits Beach</p>
+              <p class="text-sm font-semibold md:text-right">12 — 8</p>
+            </div>
+          </div>
+        </div>
+        <aside id="story" class="border border-ink/10 bg-shell p-6 md:p-8">
+          <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-ink/50">Remake note</p>
+          <p class="mt-4 font-serif text-3xl leading-tight">More useful than the original, less precious than a typical luxe restaurant page.</p>
+          <p class="mt-5 text-sm leading-7 text-ink/72">The typography stays refined, but the navigation, schedule, and calls to action are more direct so the concept doesn’t drift into generic premium dining territory.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="cta" class="mx-auto flex max-w-7xl flex-col gap-4 border-t border-ink/10 px-4 py-10 md:flex-row md:items-center md:justify-between md:px-8 md:py-12">
+      <div>
+        <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-ink/50">Final action</p>
+        <h2 class="mt-3 font-serif text-5xl md:text-6xl">Quietly premium. Still easy to use.</h2>
+      </div>
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <a href="index.html" class="inline-flex items-center justify-center border border-ink/20 px-6 py-4 font-mono text-[11px] uppercase tracking-[0.26em] transition hover:border-ink hover:bg-shell">Back to gallery</a>
+        <a href="#" class="inline-flex items-center justify-center bg-ink px-6 py-4 font-mono text-[11px] uppercase tracking-[0.26em] text-paper transition hover:bg-taste">Get directions</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

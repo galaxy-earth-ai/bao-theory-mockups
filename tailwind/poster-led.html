@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bao Theory — Tailwind Concept 01 / Poster-Led</title>
+  <meta name="description" content="Bao Theory Tailwind remake of the Poster-Led concept — high-impact imagery, oversized typography, and clear menu/location/schedule access.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Jost:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bao: '#FFF4D9',
+            paper: '#F6F4ED',
+            ink: '#201C0D',
+            taste: '#CB0D00',
+            sand: '#E7DFCF'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            geometric: ['Jost', 'Inter', 'sans-serif'],
+            mono: ['IBM Plex Mono', 'monospace']
+          },
+          boxShadow: {
+            hard: '8px 8px 0 #201C0D'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .ticker-track { animation: marquee 26s linear infinite; }
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
+</head>
+<body class="bg-paper text-ink antialiased">
+  <div class="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(203,13,0,0.18),_transparent_25%),linear-gradient(180deg,_rgba(255,255,255,0.2),_rgba(255,255,255,0))]">
+    <header class="absolute inset-x-0 top-0 z-30">
+      <div class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-5 text-bao md:px-8">
+        <a href="index.html" class="font-geometric text-lg font-extrabold uppercase tracking-[0.24em]">Bao Theory</a>
+        <nav class="hidden items-center gap-8 font-geometric text-xs font-semibold uppercase tracking-[0.24em] md:flex">
+          <a href="#menu" class="transition hover:text-white/75">Menu</a>
+          <a href="#schedule" class="transition hover:text-white/75">Schedule</a>
+          <a href="#drop" class="transition hover:text-white/75">What’s On</a>
+          <a href="#cta" class="border border-bao px-4 py-2 transition hover:bg-bao hover:text-ink">Order Now</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(32,28,13,0.2),rgba(32,28,13,0.78))]"></div>
+        <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=80" alt="Bao preparation with hard-flash editorial mood" class="h-[100svh] w-full object-cover">
+        <div class="absolute inset-x-0 bottom-0 z-10 mx-auto flex max-w-7xl flex-col gap-8 px-4 pb-8 text-bao md:px-8 md:pb-10">
+          <div class="max-w-5xl">
+            <p class="mb-4 font-mono text-[11px] uppercase tracking-[0.34em] text-bao/70">Tailwind remake / concept 01 / poster-led</p>
+            <h1 class="font-geometric text-[20vw] font-extrabold uppercase leading-[0.82] tracking-[-0.08em] sm:text-[16vw] md:text-[12rem] lg:text-[13rem]">Street Bao.<br>Editorial Energy.</h1>
+          </div>
+          <div class="grid gap-4 md:grid-cols-[1.5fr_1fr] md:items-end">
+            <p class="max-w-2xl text-base leading-7 text-bao/88 md:text-xl">Bold like a poster, fast like a truck stop board. The remake keeps the full-bleed drama of the original, but adds an above-the-fold info rail so menu, location, and hours land instantly.</p>
+            <div class="grid gap-px overflow-hidden border border-bao/40 bg-bao/25 text-sm uppercase tracking-[0.18em] backdrop-blur md:grid-cols-2">
+              <div class="bg-ink/25 p-4">
+                <p class="font-mono text-[11px] text-bao/70">Today</p>
+                <p class="mt-2 font-geometric text-xl font-bold tracking-[0.08em]">Main St + 2nd</p>
+              </div>
+              <div class="bg-ink/25 p-4">
+                <p class="font-mono text-[11px] text-bao/70">Hours</p>
+                <p class="mt-2 font-geometric text-xl font-bold tracking-[0.08em]">11 — 9</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-y border-ink bg-ink py-3 text-bao">
+        <div class="overflow-hidden whitespace-nowrap">
+          <div class="ticker-track inline-flex min-w-[200%] gap-10 pr-10 font-geometric text-sm font-bold uppercase tracking-[0.24em] md:text-base">
+            <span>● Open now until 9pm</span>
+            <span>Today’s location: Main St &amp; East 2nd</span>
+            <span>Walk-ins welcome</span>
+            <span>Pickup pre-order available</span>
+            <span>New drop: chili crisp chicken bao</span>
+            <span>● Open now until 9pm</span>
+            <span>Today’s location: Main St &amp; East 2nd</span>
+            <span>Walk-ins welcome</span>
+            <span>Pickup pre-order available</span>
+            <span>New drop: chili crisp chicken bao</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="mx-auto grid max-w-7xl gap-8 px-4 py-8 md:px-8 lg:grid-cols-[1.3fr_0.7fr]">
+        <div class="grid gap-px border border-ink bg-ink" id="menu">
+          <div class="grid gap-px bg-ink md:grid-cols-3">
+            <article class="bg-paper p-6 md:p-8">
+              <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/60">Signature / 01</p>
+              <div class="mt-8 flex items-end justify-between gap-4 border-b border-ink pb-4">
+                <h2 class="font-geometric text-3xl font-extrabold uppercase leading-none tracking-[-0.05em]">Pork Theory</h2>
+                <span class="font-mono text-sm font-semibold">$9</span>
+              </div>
+              <p class="mt-4 max-w-xs text-sm leading-6 text-ink/80">Braised pork belly, mustard greens, peanut dust, cilantro, and a soft steamed bao that holds the whole argument together.</p>
+            </article>
+            <article class="bg-paper p-6 md:p-8">
+              <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/60">Hot / 02</p>
+              <div class="mt-8 flex items-end justify-between gap-4 border-b border-ink pb-4">
+                <h2 class="font-geometric text-3xl font-extrabold uppercase leading-none tracking-[-0.05em]">Chili Bird</h2>
+                <span class="font-mono text-sm font-semibold">$8.5</span>
+              </div>
+              <p class="mt-4 max-w-xs text-sm leading-6 text-ink/80">Fried chicken glazed in mala honey, crisp slaw, and chili mayo. Loud, sticky, immediate.</p>
+            </article>
+            <article class="bg-paper p-6 md:p-8">
+              <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/60">Plant / 03</p>
+              <div class="mt-8 flex items-end justify-between gap-4 border-b border-ink pb-4">
+                <h2 class="font-geometric text-3xl font-extrabold uppercase leading-none tracking-[-0.05em]">Earth Bao</h2>
+                <span class="font-mono text-sm font-semibold">$8</span>
+              </div>
+              <p class="mt-4 max-w-xs text-sm leading-6 text-ink/80">Shiitake, tofu skin, ginger-scallion oil, sesame greens. Vegan, but still all signal and texture.</p>
+            </article>
+          </div>
+          <div class="grid gap-px bg-ink md:grid-cols-[1fr_1.2fr]">
+            <div class="bg-bao p-6 md:p-8">
+              <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/60">Quick read</p>
+              <h3 class="mt-4 font-geometric text-5xl font-extrabold uppercase leading-[0.92] tracking-[-0.05em]">Menu first.<br>Info faster.</h3>
+            </div>
+            <div class="bg-paper p-6 md:p-8">
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/60">Best with</p>
+                  <p class="mt-2 text-sm leading-6 text-ink/80">Black vinegar cucumbers / sesame slaw / yuzu soda.</p>
+                </div>
+                <div>
+                  <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/60">Action</p>
+                  <a href="#cta" class="mt-2 inline-flex border-2 border-ink px-4 py-3 font-geometric text-xs font-bold uppercase tracking-[0.24em] transition hover:bg-ink hover:text-bao">View full menu</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside id="schedule" class="grid gap-px border border-ink bg-ink">
+          <div class="bg-taste p-6 text-bao md:p-8">
+            <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-bao/70">Live board</p>
+            <p class="mt-3 font-geometric text-4xl font-extrabold uppercase leading-none tracking-[-0.05em]">Open now</p>
+            <p class="mt-3 text-sm uppercase tracking-[0.18em]">Until 9:00pm / pickup + walk-ins</p>
+          </div>
+          <div class="bg-paper p-6 md:p-8">
+            <div class="mb-5 flex items-end justify-between gap-4 border-b border-ink pb-3">
+              <h2 class="font-geometric text-3xl font-extrabold uppercase tracking-[-0.05em]">Where &amp; When</h2>
+              <a href="#cta" class="font-mono text-[11px] uppercase tracking-[0.24em] text-taste">Maps ↗</a>
+            </div>
+            <div class="space-y-3 font-geometric text-sm uppercase tracking-[0.14em]">
+              <div class="grid grid-cols-[auto_1fr_auto] gap-3 border border-taste bg-taste/8 px-3 py-3 font-bold text-taste">
+                <span>Today</span>
+                <span>Main St &amp; 2nd Ave</span>
+                <span>11—9</span>
+              </div>
+              <div class="grid grid-cols-[auto_1fr_auto] gap-3 border border-ink/20 px-3 py-3">
+                <span>Thu</span>
+                <span>Robson Square</span>
+                <span>11—4</span>
+              </div>
+              <div class="grid grid-cols-[auto_1fr_auto] gap-3 border border-ink/20 px-3 py-3">
+                <span>Fri</span>
+                <span>Gastown Railtown</span>
+                <span>12—8</span>
+              </div>
+              <div class="grid grid-cols-[auto_1fr_auto] gap-3 border border-ink/20 px-3 py-3">
+                <span>Sat</span>
+                <span>Kits Beach</span>
+                <span>12—8</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="drop" class="mx-auto grid max-w-7xl gap-6 px-4 pb-8 md:px-8 lg:grid-cols-[1fr_1fr]">
+        <article class="border border-ink bg-bao p-6 md:p-8">
+          <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/60">Current drop</p>
+          <h2 class="mt-4 font-geometric text-5xl font-extrabold uppercase leading-[0.9] tracking-[-0.06em]">Late-night set menu for Mount Pleasant.</h2>
+          <p class="mt-4 max-w-xl text-sm leading-7 text-ink/80">A tighter poster system than the original: one loud drop story, one clear CTA, one short list of reasons to show up tonight.</p>
+        </article>
+        <div class="border border-ink bg-ink p-6 text-bao md:p-8">
+          <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-bao/60">Signals</p>
+          <div class="mt-6 grid gap-4 sm:grid-cols-3">
+            <div>
+              <p class="font-geometric text-3xl font-extrabold uppercase">03</p>
+              <p class="mt-2 text-sm uppercase tracking-[0.16em] text-bao/72">Core baos</p>
+            </div>
+            <div>
+              <p class="font-geometric text-3xl font-extrabold uppercase">01</p>
+              <p class="mt-2 text-sm uppercase tracking-[0.16em] text-bao/72">Weekly drop</p>
+            </div>
+            <div>
+              <p class="font-geometric text-3xl font-extrabold uppercase">Easy</p>
+              <p class="mt-2 text-sm uppercase tracking-[0.16em] text-bao/72">Find menu + schedule</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="cta" class="border-t border-ink bg-paper">
+        <div class="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-10 md:px-8 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/60">Next move</p>
+            <h2 class="mt-3 font-geometric text-5xl font-extrabold uppercase leading-[0.92] tracking-[-0.06em] md:text-6xl">Taste the theory.</h2>
+          </div>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <a href="index.html" class="inline-flex items-center justify-center border-2 border-ink px-6 py-4 font-geometric text-xs font-bold uppercase tracking-[0.24em] transition hover:bg-ink hover:text-bao">Back to gallery</a>
+            <a href="#" class="inline-flex items-center justify-center bg-taste px-6 py-4 font-geometric text-xs font-bold uppercase tracking-[0.24em] text-bao transition hover:bg-ink">Get directions</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
