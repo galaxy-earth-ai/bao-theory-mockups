@@ -1,6 +1,6 @@
 # Bao Theory Mockups
 
-Public share repo for Bao Theory homepage concept work.
+Public share repo for the Bao Theory Tailwind remake set.
 
 ## Live site
 
@@ -8,12 +8,11 @@ Public share repo for Bao Theory homepage concept work.
 
 ## Current structure
 
-- `index.html` — public landing page for the new Tailwind remakes
-- `tailwind/` — Tailwind CSS standalone mockups + mirrored gallery
-- `concepts/` — original standalone HTML mockups
-- `assets/` — preview/share assets from the earlier concept set
+- `index.html` — public landing page for the Tailwind gallery
+- `tailwind/` — standalone Tailwind mockups + mirrored gallery
+- `.nojekyll` — GitHub Pages compatibility
 
-## Tailwind remake set
+## Tailwind set
 
 Inside `tailwind/`:
 
@@ -26,6 +25,6 @@ Inside `tailwind/`:
 
 ## Notes
 
-- The Tailwind versions are parallel rebuilds; the originals are preserved.
-- Goal: keep the Bao Theory direction **street but editorial** while making **menu + location/schedule** effortless to find.
+- This public repo now exposes only the Tailwind remake set.
+- Shared goal: keep the Bao Theory direction **street but editorial** while making **menu + location/schedule** effortless to find.
 - These are presentation-ready mockups for review and sharing, not a production website.
