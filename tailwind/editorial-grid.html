@@ -202,7 +202,6 @@
 
       const mq = window.matchMedia('(max-width: 1023px)');
       const openClass = menu.dataset.openClass || 'block';
-      let previewed = false;
 
       const setOpen = (open) => {
         menu.classList.toggle('hidden', !open);
@@ -210,19 +209,13 @@
         button.setAttribute('aria-expanded', open ? 'true' : 'false');
       };
 
-      const showPreviewIfNeeded = (matches) => {
-        if (matches && !previewed) {
-          setOpen(true);
-          previewed = true;
-        }
-        if (!matches) setOpen(false);
-      };
-
-      showPreviewIfNeeded(mq.matches);
+      setOpen(false);
       button.addEventListener('click', () => setOpen(menu.classList.contains('hidden')));
       close?.addEventListener('click', () => setOpen(false));
       menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
-      mq.addEventListener?.('change', (event) => showPreviewIfNeeded(event.matches));
+      mq.addEventListener?.('change', (event) => {
+        if (!event.matches) setOpen(false);
+      });
     });
   </script>
 </body>
