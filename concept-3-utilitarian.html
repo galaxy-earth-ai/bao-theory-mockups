@@ -160,76 +160,14 @@
             border-top: 2px solid var(--color-text);
         }
 
-        /* Mobile Menu Utilitarian */
-        .mobile-util-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--color-bg);
-            z-index: 500;
-            padding: 1rem;
-            display: none;
-            flex-direction: column;
-        }
-        .mobile-util-menu.active { display: flex; }
-        .mobile-util-menu .menu-inner {
-            border: 2px solid var(--color-text);
-            height: 100%;
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-        }
-        .mobile-util-menu .menu-item-link {
-            border-bottom: 2px solid var(--color-text);
-            padding: 1.5rem 0;
-            text-decoration: none;
-            color: var(--color-text);
-            font-size: 1.5rem;
-            font-weight: 900;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .mobile-util-menu .menu-item-link:last-child { border-bottom: none; margin-top: auto; background: var(--color-danger); color: white; padding: 1.5rem; margin-left: -1rem; margin-right: -1rem; }
-        .mobile-menu-trigger { display: none; }
-
         @media (max-width: 768px) {
-            .mobile-menu-trigger { display: block; font-weight: 900; border: 2px solid black; padding: 0.25rem 0.5rem; }
-            header .nav-links { display: none; }
-            header { flex-direction: row; justify-content: space-between; align-items: center; }
-            .logo { font-size: 1.5rem; }
             .main-content, .hero-manifest { grid-template-columns: 1fr; }
-            .manifest-data { font-size: 1.5rem; }
-            
-            .schedule-row { font-size: 0.8rem; padding: 0.75rem 0; }
-            .menu-item { gap: 0.5rem; padding: 1rem 0; }
-            .menu-item .name { font-size: 1.2rem; }
-            .menu-item .price { font-size: 1rem; }
-            .menu-item .desc { grid-column: 1 / 4; margin-top: 0.5rem; font-size: 0.85rem; }
-            
             .image-strip { grid-template-columns: 1fr 1fr; height: auto; }
-            .image-box { height: 150px; }
-            
-            footer { flex-direction: column; gap: 0.75rem; font-size: 0.7rem; text-align: center; }
+            .image-box { height: 200px; }
         }
     </style>
 </head>
 <body>
-
-    <div class="mobile-util-menu" id="utilMenu">
-        <div class="menu-inner">
-            <div class="border-box" style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center;">
-                <div class="logo" style="font-size: 1.5rem;">MENU_NAV</div>
-                <div class="mobile-menu-trigger" onclick="document.getElementById('utilMenu').classList.remove('active')">[ X ]</div>
-            </div>
-            <a href="#" class="menu-item-link" onclick="document.getElementById('utilMenu').classList.remove('active')"><span>01_MENU</span> <span>→</span></a>
-            <a href="#" class="menu-item-link" onclick="document.getElementById('utilMenu').classList.remove('active')"><span>02_LOCATE</span> <span>→</span></a>
-            <a href="#" class="menu-item-link" onclick="document.getElementById('utilMenu').classList.remove('active')"><span>03_ARCHIVE</span> <span>→</span></a>
-            <a href="#" class="menu-item-link" onclick="document.getElementById('utilMenu').classList.remove('active')"><span>DEPLOY_ORDER_NOW</span></a>
-        </div>
-    </div>
 
     <header class="border-box">
         <div>
@@ -242,7 +180,6 @@
             <a href="#">[ 03_ARCHIVE ]</a>
             <a href="#" style="background: var(--color-danger); color: white; padding: 2px 5px;">[ ORDER_NOW ]</a>
         </nav>
-        <div class="mobile-menu-trigger" onclick="document.getElementById('utilMenu').classList.add('active')">[ MENU ]</div>
     </header>
 
     <section class="hero-manifest">

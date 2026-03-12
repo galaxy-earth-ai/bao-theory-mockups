@@ -34,15 +34,11 @@
         }
 
         /* Hero / Identity */
-        .item-logo { grid-column: span 3; grid-row: span 1; display: flex; align-items: center; border-right: 1px solid var(--color-text); }
+        .item-logo { grid-column: span 3; grid-row: span 1; display: flex; align-items: center; }
         .item-logo h1 { font-size: 2rem; font-weight: 900; letter-spacing: -0.02em; }
         
         .item-nav { grid-column: span 9; display: flex; justify-content: flex-end; align-items: center; gap: 3rem; }
         .item-nav a { text-decoration: none; color: inherit; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.1em; }
-
-        .mobile-header { display: none; background: var(--color-bg); padding: 1.5rem; border-bottom: 1px solid var(--color-text); position: sticky; top: 0; z-index: 1000; justify-content: space-between; align-items: center; }
-        .mobile-logo { font-size: 1.5rem; font-weight: 900; }
-        .mobile-toggle { font-weight: 900; font-size: 0.8rem; }
 
         .item-hero-text { grid-column: span 8; grid-row: span 3; display: flex; flex-direction: column; justify-content: center; border-right: 1px solid var(--color-text); }
         .item-hero-text h2 { font-size: 10vw; text-transform: uppercase; font-weight: 900; line-height: 0.85; margin-bottom: 2rem; }
@@ -71,102 +67,15 @@
         /* Footer area */
         .item-footer { grid-column: span 12; padding: 2rem; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; display: flex; justify-content: space-between; border-top: 1px solid var(--color-text); }
 
-        /* Mobile Menu Panel */
-        .mobile-menu-panel {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--color-bg);
-            z-index: 2000;
-            display: grid;
-            grid-template-rows: auto 1fr auto;
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-        }
-        .mobile-menu-panel.active { transform: translateX(0); }
-        .mobile-menu-panel .panel-header {
-            padding: 1.5rem;
-            border-bottom: 1px solid var(--color-text);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .mobile-menu-panel .panel-links {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 2rem;
-        }
-        .mobile-menu-panel .panel-links a {
-            font-size: 2.5rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: var(--color-text);
-            margin-bottom: 1.5rem;
-            border-bottom: 4px solid var(--color-accent);
-            display: inline-block;
-            width: fit-content;
-        }
-        .mobile-menu-panel .panel-footer {
-            padding: 2rem;
-            border-top: 1px solid var(--color-text);
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
         @media (max-width: 1024px) {
-            .grid-container { display: flex; flex-direction: column; gap: 0; background: var(--color-text); }
-            .grid-item { border-bottom: 1px solid var(--color-text); }
-            
-            .item-logo, .item-nav { display: none; }
-            .mobile-header { display: flex; }
-            
-            .item-hero-text { padding: 3rem 1.5rem; border-right: none; }
-            .item-hero-text h2 { font-size: 15vw; margin-bottom: 1.5rem; }
-            .item-hero-text p { font-size: 1.2rem; max-width: 100%; }
-            
-            .item-hero-img { height: 60vh; width: 100%; }
-            
-            .item-status { flex-direction: column; align-items: flex-start; gap: 0.75rem; padding: 1.5rem; }
-            .item-status span:last-child { width: 100%; text-align: center; padding: 1rem; margin-top: 0.5rem; }
-
-            .item-menu-header { font-size: 2rem; padding: 2rem 1.5rem; background: var(--color-text); color: white; border-bottom: none; }
-            .item-menu-items { grid-template-columns: 1fr; gap: 1px; }
-            .menu-col { background: var(--color-bg); padding: 2rem 1.5rem; }
-
-            .item-map { height: 300px; border-top: none; }
-            .item-schedule { padding: 2rem 1.5rem; border-top: none; }
-            .item-schedule h3 { font-size: 2.5rem; margin-bottom: 1.5rem; }
-            
-            .item-footer { flex-direction: column; gap: 1rem; padding: 2rem 1.5rem; font-size: 0.75rem; }
+            .grid-container { display: flex; flex-direction: column; }
+            .item-hero-text h2 { font-size: 4rem; }
+            .item-hero-img { height: 300px; }
+            .item-menu-items { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <div class="mobile-menu-panel" id="mobileMenu">
-        <div class="panel-header">
-            <div class="mobile-logo">BAO THEORY</div>
-            <div class="mobile-toggle" onclick="document.getElementById('mobileMenu').classList.remove('active')">CLOSE</div>
-        </div>
-        <div class="panel-links">
-            <a href="#" onclick="document.getElementById('mobileMenu').classList.remove('active')">Protocol / Menu</a>
-            <a href="#" onclick="document.getElementById('mobileMenu').classList.remove('active')">Coordinates</a>
-            <a href="#" onclick="document.getElementById('mobileMenu').classList.remove('active')">Journal</a>
-            <a href="#" onclick="document.getElementById('mobileMenu').classList.remove('active')" style="background: var(--color-accent); color: white; padding: 0.25rem 1rem;">Order Now</a>
-        </div>
-        <div class="panel-footer">
-            <span>STREET BUT EDITORIAL</span>
-        </div>
-    </div>
-
-    <div class="mobile-header">
-        <div class="mobile-logo">BAO THEORY</div>
-        <div class="mobile-toggle" onclick="document.getElementById('mobileMenu').classList.add('active')">MENU</div>
-    </div>
 
     <div class="grid-container">
         <!-- Header -->
