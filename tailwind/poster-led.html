@@ -42,15 +42,50 @@
 </head>
 <body class="bg-paper text-ink antialiased">
   <div class="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(203,13,0,0.18),_transparent_25%),linear-gradient(180deg,_rgba(255,255,255,0.2),_rgba(255,255,255,0))]">
-    <header class="absolute inset-x-0 top-0 z-30">
+    <header class="absolute inset-x-0 top-0 z-40">
       <div class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-5 text-bao md:px-8">
         <a href="index.html" class="font-geometric text-lg font-extrabold uppercase tracking-[0.24em]">Bao Theory</a>
-        <nav class="hidden items-center gap-8 font-geometric text-xs font-semibold uppercase tracking-[0.24em] md:flex">
+        <button type="button" data-menu-button aria-controls="poster-mobile-menu" aria-expanded="false" class="inline-flex items-center gap-3 border border-bao/70 bg-ink/30 px-4 py-3 font-geometric text-[11px] font-bold uppercase tracking-[0.28em] backdrop-blur lg:hidden">
+          Menu <span class="font-mono text-bao/70">01</span>
+        </button>
+        <nav class="hidden items-center gap-6 font-geometric text-xs font-semibold uppercase tracking-[0.24em] lg:flex">
           <a href="#menu" class="transition hover:text-white/75">Menu</a>
+          <a href="#location" class="transition hover:text-white/75">Location</a>
           <a href="#schedule" class="transition hover:text-white/75">Schedule</a>
           <a href="#drop" class="transition hover:text-white/75">What’s On</a>
           <a href="#cta" class="border border-bao px-4 py-2 transition hover:bg-bao hover:text-ink">Order Now</a>
         </nav>
+      </div>
+      <div id="poster-mobile-menu" data-mobile-menu data-open-class="flex" class="hidden fixed inset-0 z-50 bg-ink/70 px-4 py-4 backdrop-blur-sm lg:hidden">
+        <div class="relative flex min-h-full w-full flex-col overflow-hidden border border-bao/40 bg-[linear-gradient(180deg,rgba(32,28,13,0.92),rgba(32,28,13,0.98))] p-5 text-bao sm:ml-auto sm:max-w-lg">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(203,13,0,0.22),_transparent_32%)]"></div>
+          <div class="relative flex items-start justify-between gap-4">
+            <div>
+              <p class="font-mono text-[11px] uppercase tracking-[0.34em] text-bao/60">Mobile poster nav</p>
+              <p class="mt-2 font-geometric text-3xl font-extrabold uppercase leading-none tracking-[-0.06em]">Street Bao.<br>Fast access.</p>
+            </div>
+            <button type="button" data-menu-close class="inline-flex border border-bao/40 px-3 py-2 font-mono text-[11px] uppercase tracking-[0.28em] text-bao/70">Close</button>
+          </div>
+          <div class="relative mt-8 grid gap-px border border-bao/30 bg-bao/20">
+            <a href="#menu" class="flex items-center justify-between bg-ink/40 px-4 py-4 font-geometric text-lg font-bold uppercase tracking-[0.16em] transition hover:bg-bao hover:text-ink"><span>Menu</span><span class="font-mono text-[11px]">01</span></a>
+            <a href="#location" class="flex items-center justify-between bg-ink/40 px-4 py-4 font-geometric text-lg font-bold uppercase tracking-[0.16em] transition hover:bg-bao hover:text-ink"><span>Location</span><span class="font-mono text-[11px]">02</span></a>
+            <a href="#schedule" class="flex items-center justify-between bg-ink/40 px-4 py-4 font-geometric text-lg font-bold uppercase tracking-[0.16em] transition hover:bg-bao hover:text-ink"><span>Schedule</span><span class="font-mono text-[11px]">03</span></a>
+            <a href="#drop" class="flex items-center justify-between bg-ink/40 px-4 py-4 font-geometric text-lg font-bold uppercase tracking-[0.16em] transition hover:bg-bao hover:text-ink"><span>Drop</span><span class="font-mono text-[11px]">04</span></a>
+          </div>
+          <div class="relative mt-8 grid gap-3 border border-bao/30 bg-bao/10 p-4 text-sm uppercase tracking-[0.18em] text-bao/86 sm:grid-cols-2">
+            <div>
+              <p class="font-mono text-[11px] text-bao/60">Today</p>
+              <p class="mt-2 font-geometric text-xl font-bold tracking-[0.08em]">Main St + 2nd</p>
+            </div>
+            <div>
+              <p class="font-mono text-[11px] text-bao/60">Hours</p>
+              <p class="mt-2 font-geometric text-xl font-bold tracking-[0.08em]">11 — 9</p>
+            </div>
+          </div>
+          <div class="relative mt-auto pt-8">
+            <a href="#cta" class="inline-flex w-full items-center justify-center bg-taste px-5 py-4 font-geometric text-xs font-bold uppercase tracking-[0.24em] text-bao transition hover:bg-bao hover:text-ink">Order now</a>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -144,8 +179,8 @@
           </div>
         </div>
 
-        <aside id="schedule" class="grid gap-px border border-ink bg-ink">
-          <div class="bg-taste p-6 text-bao md:p-8">
+        <aside id="location" class="grid gap-px border border-ink bg-ink">
+          <div id="schedule" class="bg-taste p-6 text-bao md:p-8">
             <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-bao/70">Live board</p>
             <p class="mt-3 font-geometric text-4xl font-extrabold uppercase leading-none tracking-[-0.05em]">Open now</p>
             <p class="mt-3 text-sm uppercase tracking-[0.18em]">Until 9:00pm / pickup + walk-ins</p>
@@ -220,5 +255,42 @@
       </section>
     </main>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const button = document.querySelector('[data-menu-button]');
+      const menu = document.querySelector('[data-mobile-menu]');
+      const close = document.querySelector('[data-menu-close]');
+      if (!button || !menu) return;
+
+      const mq = window.matchMedia('(max-width: 1023px)');
+      const openClass = menu.dataset.openClass || 'block';
+      let previewed = false;
+
+      const setOpen = (open) => {
+        menu.classList.toggle('hidden', !open);
+        menu.classList.toggle(openClass, open);
+        button.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.documentElement.classList.toggle('overflow-hidden', open);
+        document.body.classList.toggle('overflow-hidden', open);
+      };
+
+      const showPreviewIfNeeded = (matches) => {
+        if (matches && !previewed) {
+          setOpen(true);
+          previewed = true;
+        }
+        if (!matches) setOpen(false);
+      };
+
+      showPreviewIfNeeded(mq.matches);
+      button.addEventListener('click', () => setOpen(menu.classList.contains('hidden')));
+      close?.addEventListener('click', () => setOpen(false));
+      menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+      menu.addEventListener('click', (event) => {
+        if (event.target === menu) setOpen(false);
+      });
+      mq.addEventListener?.('change', (event) => showPreviewIfNeeded(event.matches));
+    });
+  </script>
 </body>
 </html>

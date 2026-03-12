@@ -36,14 +36,52 @@
       <div class="bg-paper p-5 md:col-span-3 md:p-7">
         <a href="index.html" class="font-geometric text-lg font-extrabold uppercase tracking-[0.24em]">Bao Theory</a>
       </div>
-      <nav class="bg-paper p-5 font-geometric text-xs font-semibold uppercase tracking-[0.22em] md:col-span-9 md:flex md:items-center md:justify-end md:gap-8 md:p-7">
-        <div class="flex flex-wrap gap-4 md:gap-8">
-          <a href="#menu" class="transition hover:text-taste">Menu</a>
-          <a href="#schedule" class="transition hover:text-taste">Schedule</a>
-          <a href="#story" class="transition hover:text-taste">Concept note</a>
-          <a href="#cta" class="border border-ink px-4 py-2 transition hover:bg-ink hover:text-bao">Order now</a>
+      <div class="bg-paper p-5 md:col-span-9 md:p-7">
+        <div class="flex items-center justify-between gap-4">
+          <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/50 lg:hidden">Menu index</p>
+          <button type="button" data-menu-button aria-controls="editorial-mobile-menu" aria-expanded="false" class="inline-flex items-center gap-3 border border-ink px-4 py-3 font-geometric text-[11px] font-bold uppercase tracking-[0.24em] lg:hidden">Menu<span class="font-mono text-ink/50">/ open</span></button>
+          <nav class="hidden items-center justify-end gap-8 font-geometric text-xs font-semibold uppercase tracking-[0.22em] lg:flex lg:w-full">
+            <a href="#menu" class="transition hover:text-taste">Menu</a>
+            <a href="#location" class="transition hover:text-taste">Location</a>
+            <a href="#schedule" class="transition hover:text-taste">Schedule</a>
+            <a href="#story" class="transition hover:text-taste">Concept note</a>
+            <a href="#cta" class="border border-ink px-4 py-2 transition hover:bg-ink hover:text-bao">Order now</a>
+          </nav>
         </div>
-      </nav>
+      </div>
+      <div id="editorial-mobile-menu" data-mobile-menu data-open-class="block" class="hidden bg-paper md:col-span-12 lg:hidden">
+        <div class="grid gap-px border-t border-ink bg-ink">
+          <div class="bg-paper p-5 md:p-7">
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-ink/55">Responsive navigation / grid mode</p>
+                <p class="mt-3 max-w-2xl font-geometric text-3xl font-extrabold uppercase leading-[0.92] tracking-[-0.06em]">Everything important gets its own module.</p>
+              </div>
+              <button type="button" data-menu-close class="inline-flex border border-ink px-3 py-2 font-mono text-[11px] uppercase tracking-[0.24em]">Close</button>
+            </div>
+          </div>
+          <div class="grid gap-px bg-ink sm:grid-cols-2">
+            <a href="#menu" class="bg-paper p-5 font-geometric text-lg font-bold uppercase tracking-[0.08em] transition hover:bg-taste hover:text-bao">Menu</a>
+            <a href="#location" class="bg-paper p-5 font-geometric text-lg font-bold uppercase tracking-[0.08em] transition hover:bg-taste hover:text-bao">Location</a>
+            <a href="#schedule" class="bg-paper p-5 font-geometric text-lg font-bold uppercase tracking-[0.08em] transition hover:bg-taste hover:text-bao">Schedule</a>
+            <a href="#cta" class="bg-paper p-5 font-geometric text-lg font-bold uppercase tracking-[0.08em] text-taste transition hover:bg-ink hover:text-bao">Order now</a>
+          </div>
+          <div class="grid gap-px bg-ink md:grid-cols-3">
+            <div class="bg-paper p-5">
+              <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/55">Status</p>
+              <p class="mt-3 font-geometric text-2xl font-extrabold uppercase">Open now</p>
+            </div>
+            <div class="bg-paper p-5">
+              <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/55">Today’s location</p>
+              <p class="mt-3 font-geometric text-2xl font-extrabold uppercase">Main St + 2nd</p>
+            </div>
+            <div class="bg-paper p-5">
+              <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/55">Service window</p>
+              <p class="mt-3 font-geometric text-2xl font-extrabold uppercase">11 — 9</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <section class="bg-paper p-5 md:col-span-7 md:min-h-[36rem] md:p-8 lg:p-10">
         <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-ink/55">Tailwind remake / concept 02 / editorial grid</p>
@@ -101,7 +139,7 @@
         </div>
       </section>
 
-      <section class="relative bg-paper md:col-span-6 md:min-h-[27rem]">
+      <section id="location" class="relative bg-paper md:col-span-6 md:min-h-[27rem]">
         <img src="https://images.unsplash.com/photo-1513639776629-7b61b0ac49cb?auto=format&fit=crop&w=1400&q=80" alt="Neighborhood street map mood" class="h-full min-h-[20rem] w-full object-cover grayscale contrast-110">
         <div class="absolute inset-4 border border-bao bg-paper/92 p-4 md:inset-auto md:bottom-6 md:left-6 md:w-[18rem]">
           <p class="font-mono text-[11px] uppercase tracking-[0.28em] text-ink/55">Find us</p>
@@ -155,5 +193,37 @@
       </section>
     </div>
   </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const button = document.querySelector('[data-menu-button]');
+      const menu = document.querySelector('[data-mobile-menu]');
+      const close = document.querySelector('[data-menu-close]');
+      if (!button || !menu) return;
+
+      const mq = window.matchMedia('(max-width: 1023px)');
+      const openClass = menu.dataset.openClass || 'block';
+      let previewed = false;
+
+      const setOpen = (open) => {
+        menu.classList.toggle('hidden', !open);
+        menu.classList.toggle(openClass, open);
+        button.setAttribute('aria-expanded', open ? 'true' : 'false');
+      };
+
+      const showPreviewIfNeeded = (matches) => {
+        if (matches && !previewed) {
+          setOpen(true);
+          previewed = true;
+        }
+        if (!matches) setOpen(false);
+      };
+
+      showPreviewIfNeeded(mq.matches);
+      button.addEventListener('click', () => setOpen(menu.classList.contains('hidden')));
+      close?.addEventListener('click', () => setOpen(false));
+      menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+      mq.addEventListener?.('change', (event) => showPreviewIfNeeded(event.matches));
+    });
+  </script>
 </body>
 </html>

@@ -36,21 +36,51 @@
   <main class="min-h-screen p-3 md:p-5">
     <div class="mx-auto max-w-7xl space-y-3">
       <header class="border-2 border-ink bg-panel p-4 shadow-hard md:p-5">
-        <div class="flex flex-col gap-5 md:flex-row md:items-start md:justify-between">
+        <div class="flex items-start justify-between gap-4">
           <div>
             <a href="index.html" class="inline-flex bg-ink px-4 py-3 text-2xl font-bold uppercase tracking-[-0.06em] text-shell md:text-4xl">BAO THEORY</a>
             <p class="mt-3 text-[11px] uppercase tracking-[0.3em] text-ink/65">Street operations / tailwind remake / concept 03</p>
           </div>
-          <nav class="grid gap-2 text-xs font-semibold uppercase tracking-[0.22em] md:text-right">
-            <a href="#inventory" class="hover:text-taste">[01_menu]</a>
-            <a href="#deployment" class="hover:text-taste">[02_schedule]</a>
-            <a href="#signals" class="hover:text-taste">[03_status]</a>
-            <a href="#cta" class="inline-flex justify-center bg-taste px-3 py-2 text-shell md:justify-end">[order_now]</a>
-          </nav>
+          <div class="flex items-start gap-3">
+            <div class="hidden border border-ink/20 px-3 py-3 text-right text-[11px] uppercase tracking-[0.24em] text-ink/60 md:block lg:hidden">
+              <p>Menu / location / schedule / order</p>
+            </div>
+            <button type="button" data-menu-button aria-controls="utilitarian-mobile-menu" aria-expanded="false" class="inline-flex items-center gap-3 border-2 border-ink bg-shell px-4 py-3 text-xs font-semibold uppercase tracking-[0.22em] lg:hidden">[menu]<span class="text-ink/45">open</span></button>
+            <nav class="hidden gap-2 text-xs font-semibold uppercase tracking-[0.22em] lg:grid lg:text-right">
+              <a href="#inventory" class="hover:text-taste">[01_menu]</a>
+              <a href="#location" class="hover:text-taste">[02_location]</a>
+              <a href="#deployment" class="hover:text-taste">[03_schedule]</a>
+              <a href="#cta" class="inline-flex justify-end bg-taste px-3 py-2 text-shell">[order_now]</a>
+            </nav>
+          </div>
         </div>
       </header>
 
-      <section class="grid gap-3 lg:grid-cols-[1.15fr_0.85fr]" id="signals">
+      <div id="utilitarian-mobile-menu" data-mobile-menu data-open-class="flex" class="hidden fixed inset-0 z-50 bg-ink/65 backdrop-blur-[2px] lg:hidden">
+        <div class="ml-auto flex min-h-full w-full max-w-sm flex-col border-l-2 border-ink bg-panel p-4">
+          <div class="flex items-start justify-between gap-4 border-b-2 border-ink pb-4">
+            <div>
+              <p class="text-[11px] uppercase tracking-[0.3em] text-ink/60">Mobile dispatch</p>
+              <p class="mt-3 text-3xl font-bold uppercase leading-none tracking-[-0.07em]">Street ops<br>control panel</p>
+            </div>
+            <button type="button" data-menu-close class="border-2 border-ink px-3 py-2 text-[11px] uppercase tracking-[0.24em]">close</button>
+          </div>
+          <div class="mt-4 grid gap-2 text-sm font-semibold uppercase tracking-[0.16em]">
+            <a href="#inventory" class="border-2 border-ink bg-shell px-4 py-4 transition hover:bg-ink hover:text-shell">[01_menu]</a>
+            <a href="#location" class="border-2 border-ink bg-shell px-4 py-4 transition hover:bg-ink hover:text-shell">[02_location]</a>
+            <a href="#deployment" class="border-2 border-ink bg-shell px-4 py-4 transition hover:bg-ink hover:text-shell">[03_schedule]</a>
+            <a href="#cta" class="border-2 border-ink bg-taste px-4 py-4 text-shell transition hover:bg-ink">[04_order_now]</a>
+          </div>
+          <div class="mt-4 grid gap-2 border-2 border-ink bg-ink p-4 text-shell">
+            <div class="flex items-center justify-between gap-3 text-[11px] uppercase tracking-[0.22em] text-shell/60"><span>status</span><span class="text-signal">live</span></div>
+            <p class="text-2xl font-bold uppercase tracking-[-0.05em]">Main St + 2nd Ave</p>
+            <p class="text-sm uppercase tracking-[0.16em] text-shell/70">pickup active / 11 — 9</p>
+          </div>
+          <p class="mt-auto pt-6 font-sans text-sm leading-6 text-ink/75">A real small-screen drawer, not a shrunken desktop stack. Tap any command to jump straight to the right module.</p>
+        </div>
+      </div>
+
+      <section id="location" class="grid gap-3 lg:grid-cols-[1.15fr_0.85fr]">
         <div class="border-2 border-ink bg-panel p-4 shadow-hard md:p-6">
           <div class="grid gap-4 md:grid-cols-2">
             <div>
@@ -185,5 +215,42 @@
       </section>
     </div>
   </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const button = document.querySelector('[data-menu-button]');
+      const menu = document.querySelector('[data-mobile-menu]');
+      const close = document.querySelector('[data-menu-close]');
+      if (!button || !menu) return;
+
+      const mq = window.matchMedia('(max-width: 1023px)');
+      const openClass = menu.dataset.openClass || 'block';
+      let previewed = false;
+
+      const setOpen = (open) => {
+        menu.classList.toggle('hidden', !open);
+        menu.classList.toggle(openClass, open);
+        button.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.documentElement.classList.toggle('overflow-hidden', open);
+        document.body.classList.toggle('overflow-hidden', open);
+      };
+
+      const showPreviewIfNeeded = (matches) => {
+        if (matches && !previewed) {
+          setOpen(true);
+          previewed = true;
+        }
+        if (!matches) setOpen(false);
+      };
+
+      showPreviewIfNeeded(mq.matches);
+      button.addEventListener('click', () => setOpen(menu.classList.contains('hidden')));
+      close?.addEventListener('click', () => setOpen(false));
+      menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+      menu.addEventListener('click', (event) => {
+        if (event.target === menu) setOpen(false);
+      });
+      mq.addEventListener?.('change', (event) => showPreviewIfNeeded(event.matches));
+    });
+  </script>
 </body>
 </html>

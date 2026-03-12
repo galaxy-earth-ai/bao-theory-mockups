@@ -32,22 +32,58 @@
 </head>
 <body class="bg-paper text-ink antialiased">
   <main class="min-h-screen bg-[radial-gradient(circle_at_top_right,_rgba(203,13,0,0.08),_transparent_22%),linear-gradient(180deg,_#faf8f1,_#f6f4ed)]">
-    <header class="mx-auto flex max-w-7xl flex-col gap-4 border-b border-ink/10 px-4 py-6 md:flex-row md:items-center md:justify-between md:px-8 md:py-8">
-      <a href="index.html" class="font-serif text-3xl font-semibold uppercase tracking-[0.18em]">Bao Theory</a>
-      <nav class="flex flex-wrap gap-5 font-mono text-[11px] uppercase tracking-[0.24em] text-ink/60 md:gap-8">
-        <a href="#menu" class="hover:text-taste">Menu</a>
-        <a href="#schedule" class="hover:text-taste">Schedule</a>
-        <a href="#story" class="hover:text-taste">Notes</a>
-        <a href="#cta" class="text-taste">Order now</a>
-      </nav>
+    <header class="mx-auto max-w-7xl border-b border-ink/10 px-4 py-6 md:px-8 md:py-8">
+      <div class="flex items-center justify-between gap-4">
+        <a href="index.html" class="font-serif text-3xl font-semibold uppercase tracking-[0.18em]">Bao Theory</a>
+        <button type="button" data-menu-button aria-controls="minimal-mobile-menu" aria-expanded="false" class="inline-flex items-center gap-3 border border-ink/20 bg-white/70 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.24em] backdrop-blur lg:hidden">Menu<span class="text-ink/40">preview</span></button>
+        <nav class="hidden items-center gap-8 font-mono text-[11px] uppercase tracking-[0.24em] text-ink/60 lg:flex">
+          <a href="#menu" class="hover:text-taste">Menu</a>
+          <a href="#location" class="hover:text-taste">Location</a>
+          <a href="#schedule" class="hover:text-taste">Schedule</a>
+          <a href="#story" class="hover:text-taste">Notes</a>
+          <a href="#cta" class="text-taste">Order now</a>
+        </nav>
+      </div>
     </header>
+
+    <div id="minimal-mobile-menu" data-mobile-menu data-open-class="flex" class="hidden fixed inset-0 z-50 items-start justify-center bg-ink/10 px-4 py-4 backdrop-blur-sm lg:hidden">
+      <div class="w-full max-w-2xl border border-ink/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.96),rgba(246,244,237,0.98))] p-5 shadow-2xl">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-ink/45">Responsive nav / quiet mode</p>
+            <p class="mt-3 font-serif text-4xl leading-[0.94]">An elegant mobile sheet with the useful stuff up front.</p>
+          </div>
+          <button type="button" data-menu-close class="inline-flex border border-ink/15 px-3 py-2 font-mono text-[11px] uppercase tracking-[0.24em]">Close</button>
+        </div>
+        <div class="mt-6 grid gap-3 sm:grid-cols-2">
+          <a href="#menu" class="border border-ink/10 bg-white/80 px-4 py-4 font-serif text-2xl transition hover:border-ink hover:bg-shell">Menu</a>
+          <a href="#location" class="border border-ink/10 bg-white/80 px-4 py-4 font-serif text-2xl transition hover:border-ink hover:bg-shell">Location</a>
+          <a href="#schedule" class="border border-ink/10 bg-white/80 px-4 py-4 font-serif text-2xl transition hover:border-ink hover:bg-shell">Schedule</a>
+          <a href="#cta" class="border border-ink/10 bg-ink px-4 py-4 font-serif text-2xl text-paper transition hover:bg-taste">Order</a>
+        </div>
+        <div class="mt-6 grid gap-4 border-t border-ink/10 pt-5 sm:grid-cols-3">
+          <div>
+            <p class="font-mono text-[11px] uppercase tracking-[0.24em] text-ink/45">Today</p>
+            <p class="mt-2 text-base font-semibold">Main St + 2nd</p>
+          </div>
+          <div>
+            <p class="font-mono text-[11px] uppercase tracking-[0.24em] text-ink/45">Hours</p>
+            <p class="mt-2 text-base font-semibold">11:00 — 21:00</p>
+          </div>
+          <div>
+            <p class="font-mono text-[11px] uppercase tracking-[0.24em] text-ink/45">Service</p>
+            <p class="mt-2 text-base font-semibold text-taste">Open now</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <section class="mx-auto grid max-w-7xl gap-10 px-4 py-10 md:px-8 md:py-16 lg:grid-cols-[0.94fr_1.06fr] lg:items-center">
       <div class="max-w-xl">
         <p class="font-mono text-[11px] uppercase tracking-[0.3em] text-ink/50">Tailwind remake / concept 05 / minimal luxe</p>
         <h1 class="mt-6 font-serif text-6xl leading-[0.92] md:text-7xl lg:text-[5.7rem]">A quieter frame for louder flavor.</h1>
         <p class="mt-6 text-base leading-8 text-ink/72 md:text-lg">The original luxe direction pushed Bao Theory toward premium hospitality. This remake keeps the refinement, but adds stronger utility framing so it feels elevated without losing the speed of a street-first brand.</p>
-        <div class="mt-8 grid gap-4 border-y border-ink/10 py-6 sm:grid-cols-3">
+        <div id="location" class="mt-8 grid gap-4 border-y border-ink/10 py-6 sm:grid-cols-3">
           <div>
             <p class="font-mono text-[11px] uppercase tracking-[0.24em] text-ink/45">Today</p>
             <p class="mt-2 text-base font-semibold">Main St + 2nd</p>
@@ -169,5 +205,42 @@
       </div>
     </section>
   </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const button = document.querySelector('[data-menu-button]');
+      const menu = document.querySelector('[data-mobile-menu]');
+      const close = document.querySelector('[data-menu-close]');
+      if (!button || !menu) return;
+
+      const mq = window.matchMedia('(max-width: 1023px)');
+      const openClass = menu.dataset.openClass || 'block';
+      let previewed = false;
+
+      const setOpen = (open) => {
+        menu.classList.toggle('hidden', !open);
+        menu.classList.toggle(openClass, open);
+        button.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.documentElement.classList.toggle('overflow-hidden', open);
+        document.body.classList.toggle('overflow-hidden', open);
+      };
+
+      const showPreviewIfNeeded = (matches) => {
+        if (matches && !previewed) {
+          setOpen(true);
+          previewed = true;
+        }
+        if (!matches) setOpen(false);
+      };
+
+      showPreviewIfNeeded(mq.matches);
+      button.addEventListener('click', () => setOpen(menu.classList.contains('hidden')));
+      close?.addEventListener('click', () => setOpen(false));
+      menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setOpen(false)));
+      menu.addEventListener('click', (event) => {
+        if (event.target === menu) setOpen(false);
+      });
+      mq.addEventListener?.('change', (event) => showPreviewIfNeeded(event.matches));
+    });
+  </script>
 </body>
 </html>
