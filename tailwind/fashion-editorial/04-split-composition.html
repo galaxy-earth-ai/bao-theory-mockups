@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bao Theory — 04 Split Narrative</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Jost:wght@800;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bao: '#FFF4D9',
+            ink: '#201C0D',
+            taste: '#CB0D00'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            geometric: ['Jost', 'sans-serif'],
+            mono: ['IBM Plex Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-bao text-ink antialiased overflow-x-hidden">
+  <!-- Split Hero Section -->
+  <header class="flex flex-col md:flex-row h-screen w-full relative">
+    <!-- Image Side (50%) -->
+    <div class="h-1/2 md:h-full md:w-1/2 relative overflow-hidden group">
+      <img src="https://images.unsplash.com/photo-1623341214825-9f4f963727da?auto=format&fit=crop&w=1200&q=90" alt="Bao Portrait" class="w-full h-full object-cover transition duration-1000 group-hover:scale-110 grayscale hover:grayscale-0">
+      <div class="absolute inset-0 bg-ink/10 mix-blend-multiply"></div>
+      <div class="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-10">
+        <p class="font-mono text-[10px] uppercase tracking-[0.4em] text-white bg-taste/80 px-4 py-2 inline-block">Visual Evidence / 04</p>
+      </div>
+    </div>
+
+    <!-- Type Side (50%) -->
+    <div class="h-1/2 md:h-full md:w-1/2 bg-bao flex flex-col justify-between p-6 md:p-10 lg:p-20 relative">
+      <!-- Nav -->
+      <nav class="flex justify-between items-start w-full">
+         <a href="index.html" class="font-geometric text-2xl font-black uppercase tracking-tighter leading-none hover:text-taste transition">Bao<br>Theory</a>
+         <div class="hidden md:flex flex-col gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-ink/40">
+           <a href="#menu" class="hover:text-taste transition">Catalog</a>
+           <a href="#location" class="hover:text-taste transition">Mapping</a>
+         </div>
+      </nav>
+
+      <!-- Hero Text -->
+      <div class="max-w-xl">
+         <p class="font-mono text-xs uppercase tracking-[0.4em] text-taste mb-8">Concept 04 / Split Narrative</p>
+         <h1 class="font-geometric text-[10vw] md:text-[8vw] lg:text-[6.5vw] font-black uppercase leading-[0.82] tracking-[-0.05em] mb-10">THE<br>SYMMETRY<br>OF_TASTE.</h1>
+         <p class="text-xl md:text-2xl font-medium leading-relaxed text-ink/70">Balancing the rawness of street photography with the rigid structure of editorial design.</p>
+      </div>
+
+      <!-- Action Footer -->
+      <div class="flex flex-col md:flex-row items-end justify-between gap-6 border-t border-ink/10 pt-10">
+         <div class="w-full md:w-auto">
+            <p class="font-mono text-[10px] uppercase tracking-widest text-ink/40 mb-3">Next_Service</p>
+            <p class="font-geometric text-2xl font-black uppercase tracking-tight">Main St / 11am-9pm</p>
+         </div>
+         <a href="#" class="bg-ink text-white px-10 py-5 font-geometric text-sm font-black uppercase tracking-widest hover:bg-taste transition w-full md:w-auto text-center">Order_Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Secondary Scroll Content -->
+  <main class="relative z-10 bg-white">
+     <section id="menu" class="py-40 px-6 md:px-10 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+           <div>
+              <h2 class="font-geometric text-7xl font-black uppercase tracking-tighter leading-none mb-10">STRUCTURAL<br>BAO.</h2>
+              <p class="font-mono text-xs uppercase tracking-widest leading-relaxed text-ink/60 mb-20">A collection of items following the primary theory: high contrast, maximum texture, and curated simplicity.</p>
+
+              <div class="space-y-16">
+                 <article class="group">
+                    <div class="flex items-center gap-10 border-b border-ink/10 pb-10">
+                       <span class="font-mono text-4xl font-black text-taste group-hover:translate-x-2 transition">01.</span>
+                       <div class="flex-grow flex justify-between items-baseline">
+                          <h3 class="font-geometric text-5xl font-black uppercase tracking-tight group-hover:text-taste transition">Pork_Belly</h3>
+                          <span class="font-mono text-xl font-bold">$9.0</span>
+                       </div>
+                    </div>
+                    <p class="mt-8 text-lg leading-relaxed text-ink/70 group-hover:text-ink transition max-w-md ml-20">Traditional braise meets modern texture. Mustard greens, peanut crumble, and cilantro oil.</p>
+                 </article>
+                 <article class="group">
+                    <div class="flex items-center gap-10 border-b border-ink/10 pb-10">
+                       <span class="font-mono text-4xl font-black text-taste group-hover:translate-x-2 transition">02.</span>
+                       <div class="flex-grow flex justify-between items-baseline">
+                          <h3 class="font-geometric text-5xl font-black uppercase tracking-tight group-hover:text-taste transition">Chili_Bird</h3>
+                          <span class="font-mono text-xl font-bold">$8.5</span>
+                       </div>
+                    </div>
+                    <p class="mt-8 text-lg leading-relaxed text-ink/70 group-hover:text-ink transition max-w-md ml-20">Mala-honey glaze, double fried chicken, Asian slaw, and spicy garlic mayo.</p>
+                 </article>
+              </div>
+           </div>
+           <div class="relative">
+              <div class="sticky top-10 flex flex-col gap-6">
+                 <div class="aspect-[4/5] bg-ink overflow-hidden grayscale hover:grayscale-0 transition duration-700">
+                    <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=800&q=90" class="w-full h-full object-cover">
+                 </div>
+                 <div class="p-10 border-2 border-ink flex flex-col items-center text-center">
+                    <p class="font-mono text-xs uppercase tracking-[0.4em] text-taste mb-6">Current_Location</p>
+                    <h3 class="font-geometric text-4xl font-black uppercase tracking-tight mb-4">Main St & 2nd Ave</h3>
+                    <p class="font-mono text-sm mb-10 text-ink/60 uppercase tracking-widest leading-relaxed">Mount Pleasant / Vancouver / Canada</p>
+                    <a href="#" class="inline-block border-b-2 border-ink pb-2 font-mono text-xs uppercase tracking-widest font-black hover:text-taste hover:border-taste transition">Get Directions on Maps →</a>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-ink py-20 px-6 border-t border-bao/10 text-center text-white">
+    <p class="font-mono text-xs uppercase tracking-widest text-bao/30">Bao Theory / 2026 / Editorial Series / Split_Route</p>
+    <div class="mt-8">
+      <a href="index.html" class="font-geometric text-sm font-black uppercase tracking-widest hover:text-taste transition">Back to Collection</a>
+    </div>
+  </footer>
+</body>
+</html>

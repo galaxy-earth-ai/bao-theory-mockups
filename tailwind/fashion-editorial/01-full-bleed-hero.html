@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bao Theory — 01 Full-Bleed Hero</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Jost:wght@800;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bao: '#FFF4D9',
+            ink: '#201C0D',
+            taste: '#CB0D00'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            geometric: ['Jost', 'sans-serif'],
+            mono: ['IBM Plex Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-ink text-bao antialiased overflow-x-hidden">
+  <!-- Full Bleed Hero Section -->
+  <header class="relative h-screen w-full flex flex-col justify-between overflow-hidden">
+    <!-- Image Background -->
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=2400&q=90" alt="Bao Preparation" class="h-full w-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent"></div>
+      <div class="absolute inset-0 bg-ink/10 mix-blend-multiply"></div>
+    </div>
+
+    <!-- Top Nav Overlay -->
+    <nav class="relative z-10 p-6 md:p-10 flex justify-between items-start">
+      <a href="index.html" class="font-geometric text-2xl font-black uppercase tracking-tighter leading-none">Bao<br>Theory</a>
+      <div class="hidden md:flex gap-10 font-mono text-[10px] uppercase tracking-[0.3em] font-semibold text-bao/80">
+        <a href="#menu" class="hover:text-taste transition">Menu</a>
+        <a href="#locations" class="hover:text-taste transition">Locations</a>
+        <a href="#about" class="hover:text-taste transition">Theory</a>
+      </div>
+      <a href="#" class="bg-taste text-bao px-5 py-3 font-geometric text-xs font-black uppercase tracking-widest hover:bg-bao hover:text-ink transition">Order</a>
+    </nav>
+
+    <!-- Hero Content Overlay -->
+    <div class="relative z-10 px-6 md:px-10 pb-20 max-w-7xl mx-auto w-full">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-10">
+        <div class="max-w-4xl">
+          <p class="font-mono text-xs uppercase tracking-[0.4em] text-taste mb-6">Editorial Concept 01 / Full Bleed</p>
+          <h1 class="font-geometric text-[15vw] md:text-[12vw] font-black uppercase leading-[0.8] tracking-[-0.05em]">Street<br>Ritual.</h1>
+        </div>
+        <div class="bg-bao/10 backdrop-blur-xl border border-bao/20 p-8 md:max-w-xs">
+          <p class="font-mono text-[10px] uppercase tracking-widest text-bao/60 mb-4">Tonight's Drop</p>
+          <p class="font-geometric text-2xl font-black uppercase tracking-tight mb-2">Main St & 2nd</p>
+          <p class="text-sm font-medium leading-relaxed text-bao/80">A high-impact editorial experiment focusing on the tactile nature of bao culture.</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content Sections -->
+  <main class="relative z-10 bg-ink">
+    <!-- Menu Teaser -->
+    <section id="menu" class="py-32 px-6 md:px-10 max-w-7xl mx-auto border-t border-bao/10">
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+         <div>
+            <h2 class="font-geometric text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-10">Curated<br>Theory.</h2>
+            <p class="text-xl md:text-2xl font-medium leading-relaxed max-w-xl text-bao/70 mb-12">Our menu isn't exhaustive. It's a statement. Three core baos, one weekly experiment.</p>
+            <a href="#" class="inline-block border-b-2 border-taste pb-2 font-mono text-xs uppercase tracking-[0.3em] font-bold hover:text-taste transition">View Full Catalog</a>
+         </div>
+         <div class="grid gap-12">
+            <article class="group">
+              <div class="flex justify-between items-end border-b border-bao/20 pb-4 mb-4">
+                <h3 class="font-geometric text-4xl font-black uppercase tracking-tight group-hover:text-taste transition">Pork Belly</h3>
+                <span class="font-mono text-sm text-bao/50">01</span>
+              </div>
+              <p class="text-bao/60 leading-relaxed uppercase text-[11px] tracking-widest font-mono">Braised / Mustard Greens / Peanut / Cilantro</p>
+            </article>
+            <article class="group">
+              <div class="flex justify-between items-end border-b border-bao/20 pb-4 mb-4">
+                <h3 class="font-geometric text-4xl font-black uppercase tracking-tight group-hover:text-taste transition">Chili Bird</h3>
+                <span class="font-mono text-sm text-bao/50">02</span>
+              </div>
+              <p class="text-bao/60 leading-relaxed uppercase text-[11px] tracking-widest font-mono">Mala Honey Fried Chicken / Chili Mayo / Slaw</p>
+            </article>
+         </div>
+       </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-6 border-t border-bao/10 text-center">
+      <p class="font-mono text-xs uppercase tracking-widest text-bao/30">Bao Theory / 2026 / Editorial Series</p>
+      <div class="mt-8">
+        <a href="index.html" class="font-geometric text-sm font-black uppercase tracking-widest hover:text-taste transition">Back to Collection</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

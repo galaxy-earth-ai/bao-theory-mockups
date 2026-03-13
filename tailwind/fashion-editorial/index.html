@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bao Theory — Editorial Gallery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bao: '#FFF4D9',
+            ink: '#201C0D',
+            taste: '#CB0D00'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            geometric: ['Jost', 'sans-serif'],
+            mono: ['IBM Plex Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-ink text-bao font-sans selection:bg-taste selection:text-white">
+  <main class="max-w-7xl mx-auto px-6 py-20">
+    <header class="mb-20 border-b border-bao/20 pb-10">
+      <div class="flex justify-between items-end">
+        <div>
+          <p class="font-mono text-xs uppercase tracking-[0.3em] text-taste mb-4">Phase 2B / Image-Led Exploration</p>
+          <h1 class="font-geometric text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none">The Editorial<br>Series.</h1>
+        </div>
+        <div class="text-right hidden md:block">
+          <p class="font-mono text-xs uppercase tracking-widest text-bao/40">Bao Theory / Mockups / 2026</p>
+          <p class="mt-2 font-geometric text-lg font-bold">Concept 1 Evolution</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <!-- Variant 1: Full-Bleed Hero -->
+      <a href="01-full-bleed-hero.html" class="group block border border-bao/10 p-4 transition hover:border-taste bg-bao/5">
+        <div class="aspect-[4/5] bg-neutral-800 overflow-hidden relative">
+           <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=800&q=80" alt="Full-Bleed" class="w-full h-full object-cover grayscale transition duration-700 group-hover:grayscale-0 group-hover:scale-105">
+           <div class="absolute inset-0 bg-ink/40 group-hover:bg-transparent transition duration-500"></div>
+           <div class="absolute bottom-4 left-4 right-4">
+             <p class="font-geometric text-2xl font-black uppercase tracking-tight text-white drop-shadow-lg">01. Full-Bleed Hero</p>
+           </div>
+        </div>
+        <p class="mt-4 font-mono text-[10px] uppercase tracking-widest text-bao/60">High-Impact Photography • Minimal Overlays</p>
+      </a>
+
+      <!-- Variant 2: Washed Tonal Field -->
+      <a href="02-washed-tonal.html" class="group block border border-bao/10 p-4 transition hover:border-taste bg-bao/5">
+        <div class="aspect-[4/5] bg-neutral-800 overflow-hidden relative">
+           <img src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=800&q=80" alt="Washed Tonal" class="w-full h-full object-cover transition duration-700 brightness-50 contrast-125 saturate-50 group-hover:brightness-75 group-hover:scale-105">
+           <div class="absolute inset-0 bg-taste/20 mix-blend-multiply transition duration-500"></div>
+           <div class="absolute bottom-4 left-4 right-4">
+             <p class="font-geometric text-2xl font-black uppercase tracking-tight text-white drop-shadow-lg">02. Washed Tonal Field</p>
+           </div>
+        </div>
+        <p class="mt-4 font-mono text-[10px] uppercase tracking-widest text-bao/60">Textural Backgrounds • Type Integration</p>
+      </a>
+
+      <!-- Variant 3: Monochrome Backdrop -->
+      <a href="03-monochrome-stark.html" class="group block border border-bao/10 p-4 transition hover:border-taste bg-bao/5">
+        <div class="aspect-[4/5] bg-neutral-800 overflow-hidden relative">
+           <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=800&q=80" alt="Monochrome Stark" class="w-full h-full object-cover grayscale contrast-150 transition duration-700 group-hover:scale-105">
+           <div class="absolute inset-0 bg-ink/60 mix-blend-overlay group-hover:bg-ink/30 transition duration-500"></div>
+           <div class="absolute bottom-4 left-4 right-4">
+             <p class="font-geometric text-2xl font-black uppercase tracking-tight text-white drop-shadow-lg">03. Monochrome Stark</p>
+           </div>
+        </div>
+        <p class="mt-4 font-mono text-[10px] uppercase tracking-widest text-bao/60">High Contrast • Brutalist Layout</p>
+      </a>
+
+      <!-- Variant 4: Split Composition -->
+      <a href="04-split-composition.html" class="group block border border-bao/10 p-4 transition hover:border-taste bg-bao/5">
+        <div class="aspect-[4/5] bg-neutral-800 overflow-hidden relative flex">
+           <div class="w-1/2 h-full grayscale overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1623341214825-9f4f963727da?auto=format&fit=crop&w=600&q=80" class="h-full object-cover group-hover:scale-110 transition duration-700">
+           </div>
+           <div class="w-1/2 h-full bg-bao flex items-center justify-center p-4">
+              <span class="font-geometric text-4xl font-black text-ink leading-none text-center">BAO<br>THEO<br>RY</span>
+           </div>
+           <div class="absolute bottom-4 left-4 right-4 pointer-events-none">
+             <p class="font-geometric text-2xl font-black uppercase tracking-tight text-white drop-shadow-lg">04. Split Narrative</p>
+           </div>
+        </div>
+        <p class="mt-4 font-mono text-[10px] uppercase tracking-widest text-bao/60">Image vs Type Balance • Clean Dividers</p>
+      </a>
+
+      <!-- Variant 5: Layered Collage -->
+      <a href="05-layered-collage.html" class="group block border border-bao/10 p-4 transition hover:border-taste bg-bao/5">
+        <div class="aspect-[4/5] bg-neutral-900 overflow-hidden relative p-8">
+           <div class="w-full h-full border border-bao/20 relative">
+             <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=600&q=80" class="absolute top-0 right-0 w-2/3 h-1/2 object-cover opacity-60 group-hover:opacity-100 transition">
+             <img src="https://images.unsplash.com/photo-1623341214825-9f4f963727da?auto=format&fit=crop&w=600&q=80" class="absolute bottom-0 left-0 w-2/3 h-2/3 object-cover opacity-60 group-hover:opacity-100 transition">
+             <div class="absolute inset-0 flex items-center justify-center">
+               <p class="font-geometric text-8xl font-black text-white/20 select-none group-hover:text-taste/40 transition">BT</p>
+             </div>
+           </div>
+           <div class="absolute bottom-4 left-4 right-4">
+             <p class="font-geometric text-2xl font-black uppercase tracking-tight text-white drop-shadow-lg">05. Layered Collage</p>
+           </div>
+        </div>
+        <p class="mt-4 font-mono text-[10px] uppercase tracking-widest text-bao/60">Zine Aesthetic • Multi-threaded Visuals</p>
+      </a>
+    </div>
+
+    <footer class="mt-40 border-t border-bao/10 pt-10 text-center">
+      <a href="../index.html" class="font-mono text-xs uppercase tracking-[0.4em] text-bao/40 hover:text-taste transition">← Return to Root</a>
+    </footer>
+  </main>
+</body>
+</html>
