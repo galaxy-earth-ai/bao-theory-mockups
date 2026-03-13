@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bao Theory | Route C: The Poster (Visual Narrative)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Syncopate:wght@400;700&display=swap');
+        :root {
+            --bao-cream: #F6F4ED;
+            --theory-black: #201C0D;
+            --taste-red: #CB0D00;
+        }
+        body { 
+            background-color: var(--theory-black); 
+            color: var(--bao-cream);
+            font-family: 'Space Grotesk', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .full-screen {
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('https://images.unsplash.com/photo-1534422298391-e4f8c170db06?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat;
+            filter: grayscale(1) contrast(1.2) brightness(0.6);
+            z-index: -1;
+            transition: transform 0.3s ease-out;
+        }
+        .hero-bg:hover {
+            transform: scale(1.05);
+        }
+        .title-huge {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 15vw;
+            line-height: 0.8;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+            text-align: center;
+            mix-blend-mode: difference;
+        }
+        .float-info {
+            position: absolute;
+            bottom: 4rem;
+            left: 4rem;
+            right: 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            z-index: 10;
+        }
+        .v-text {
+            writing-mode: vertical-rl;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+        }
+        .card-blur {
+            background: rgba(32, 28, 13, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(246, 244, 237, 0.2);
+            padding: 2rem;
+        }
+        .cta-btn {
+            background: var(--taste-red);
+            color: white;
+            padding: 1.5rem 3rem;
+            font-family: 'Syncopate', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            transition: all 0.2s steps(4);
+        }
+        .cta-btn:hover {
+            background: var(--bao-cream);
+            color: var(--theory-black);
+            box-shadow: 10px 10px 0px var(--taste-red);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Hero Poster -->
+    <section class="full-screen">
+        <div class="hero-bg"></div>
+        <h1 class="title-huge">BAO<br>THEORY</h1>
+        
+        <div class="absolute top-8 left-8 flex flex-col space-y-4">
+            <div class="v-text opacity-40">VOL. 26.03</div>
+            <div class="v-text text-[#CB0D00]">STREET CULTURE LAB</div>
+        </div>
+
+        <div class="float-info">
+            <div class="card-blur max-w-sm">
+                <p class="text-xs font-bold uppercase tracking-[0.2em] mb-4 opacity-50">THE CONCEPT</p>
+                <h2 class="text-3xl font-bold uppercase leading-none mb-6">RAW TEXTURE. REFINED FLAVOR.</h2>
+                <p class="text-sm uppercase font-bold leading-relaxed opacity-70">
+                    A visual-first approach to the classic bao. Designed for the urban palate, engineered for the high-frequency lifestyle.
+                </p>
+            </div>
+            <div class="flex flex-col items-end space-y-6">
+                <button class="cta-btn">Find Today's Spot</button>
+                <div class="flex space-x-8 uppercase font-bold text-xs tracking-widest opacity-60">
+                    <a href="#" class="hover:text-[#CB0D00]">The Menu</a>
+                    <a href="#" class="hover:text-[#CB0D00]">The Theory</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transition Grid -->
+    <section class="grid md:grid-cols-4 border-t border-white/10 bg-[#201C0D]">
+        <div class="p-12 border-r border-white/10 flex flex-col justify-between aspect-square hover:bg-[#CB0D00] transition-colors group">
+            <span class="text-xs opacity-50 font-bold uppercase tracking-widest">[01]</span>
+            <h3 class="text-3xl font-bold uppercase leading-none group-hover:scale-110 transition-transform">BRAISED PORK</h3>
+        </div>
+        <div class="p-12 border-r border-white/10 flex flex-col justify-between aspect-square hover:bg-[#CB0D00] transition-colors group">
+            <span class="text-xs opacity-50 font-bold uppercase tracking-widest">[02]</span>
+            <h3 class="text-3xl font-bold uppercase leading-none group-hover:scale-110 transition-transform">HOT CHICKEN</h3>
+        </div>
+        <div class="p-12 border-r border-white/10 flex flex-col justify-between aspect-square hover:bg-[#CB0D00] transition-colors group">
+            <span class="text-xs opacity-50 font-bold uppercase tracking-widest">[03]</span>
+            <h3 class="text-3xl font-bold uppercase leading-none group-hover:scale-110 transition-transform">TRUFFLE VEG</h3>
+        </div>
+        <div class="p-12 flex flex-col justify-between aspect-square hover:bg-[#CB0D00] transition-colors group">
+            <span class="text-xs opacity-50 font-bold uppercase tracking-widest">[04]</span>
+            <h3 class="text-3xl font-bold uppercase leading-none group-hover:scale-110 transition-transform">GOLD MANTOU</h3>
+        </div>
+    </section>
+
+</body>
+</html>

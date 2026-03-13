@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bao Theory | Route B: Editorial Grid (The Magazine)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Libre+Franklin:wght@100;400;700;900&display=swap');
+        :root {
+            --bao-cream: #FFF4D9;
+            --theory-black: #201C0D;
+            --taste-red: #CB0D00;
+        }
+        body { 
+            background-color: var(--bao-cream); 
+            color: var(--theory-black);
+            font-family: 'Libre Franklin', sans-serif;
+            overflow-x: hidden;
+        }
+        .main-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+            padding: 1.5rem;
+        }
+        .section-line { border-top: 1px solid var(--theory-black); margin: 3rem 0; }
+        .hero-text { font-size: 12vw; line-height: 0.8; letter-spacing: -0.05em; font-weight: 900; }
+        .secondary-font { font-family: 'UnifrakturMaguntia', serif; font-size: 1.5rem; } /* Subtle contrast font for flair */
+        .btn-hover-invert:hover {
+            background-color: var(--theory-black);
+            color: var(--bao-cream);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Nav -->
+    <header class="p-6 border-b-2 border-[#201C0D] flex flex-col items-center">
+        <div class="text-[2.5rem] font-black tracking-tighter uppercase mb-4">BAO THEORY</div>
+        <div class="flex space-x-12 font-black uppercase text-[0.6rem] tracking-[0.3em] border-t border-[#201C0D] pt-4 w-full justify-center">
+            <a href="#" class="hover:text-[#CB0D00]">Vol. 01 — Menus</a>
+            <a href="#" class="hover:text-[#CB0D00]">Issue — Locations</a>
+            <a href="#" class="hover:text-[#CB0D00]">Theory — About</a>
+            <a href="#" class="text-[#CB0D00]">The Drop — Order</a>
+        </div>
+    </header>
+
+    <main class="max-w-[1600px] mx-auto p-6 md:p-12">
+        <!-- Hero Section: Editorial Layout -->
+        <section class="grid md:grid-cols-12 gap-8 mb-24">
+            <div class="md:col-span-8">
+                <h1 class="hero-text uppercase mb-12">STREET<br>BAO<br>SYSTEM</h1>
+                <div class="grid grid-cols-2 gap-8">
+                    <p class="text-sm font-bold uppercase leading-relaxed max-w-xs">
+                        Refining the chaos of street culture into a precise culinary experience.
+                    </p>
+                    <p class="text-sm font-bold uppercase leading-relaxed max-w-xs opacity-50">
+                        Based in New York / Available Everywhere.
+                    </p>
+                </div>
+            </div>
+            <div class="md:col-span-4 flex flex-col justify-end">
+                <div class="relative overflow-hidden aspect-[3/4] border-2 border-[#201C0D]">
+                    <img src="https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover grayscale brightness-110" alt="Bao Texture">
+                    <div class="absolute top-4 left-4 bg-[#CB0D00] text-white p-2 font-black text-xs uppercase -rotate-12">
+                        BEST OF '26
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature Section: Split Column -->
+        <section class="grid md:grid-cols-12 gap-12 mb-24 items-start border-t-2 border-[#201C0D] pt-12">
+            <div class="md:col-span-4 space-y-12">
+                <div>
+                    <span class="block font-black text-[#CB0D00] uppercase text-xs mb-4">01 // The Classic</span>
+                    <h3 class="text-5xl font-black uppercase mb-4 tracking-tighter">PORK BELLY DNA</h3>
+                    <p class="text-sm font-bold opacity-60 uppercase">12-hour braised heritage pork, house-made pickles, crushed peanuts, coriander.</p>
+                </div>
+                <div>
+                    <span class="block font-black text-[#CB0D00] uppercase text-xs mb-4">02 // The Fusion</span>
+                    <h3 class="text-5xl font-black uppercase mb-4 tracking-tighter">HOT BIRD BAO</h3>
+                    <p class="text-sm font-bold opacity-60 uppercase">Nashville hot chicken, Sichuan peppercorn honey, brioche-inspired steamed bun.</p>
+                </div>
+                <button class="w-full border-2 border-[#201C0D] py-4 font-black uppercase tracking-widest text-sm btn-hover-invert transition-all">
+                    Full Menu Access
+                </button>
+            </div>
+            <div class="md:col-span-8">
+                <div class="bg-[#201C0D] p-12 text-[#FFF4D9] h-full flex flex-col justify-between aspect-video md:aspect-auto">
+                    <div class="text-7xl font-black uppercase tracking-tighter leading-none mb-12">
+                        WHERE IS THE THEORY?
+                    </div>
+                    <div class="grid grid-cols-2 gap-12 font-black uppercase">
+                        <div>
+                            <p class="text-xs mb-4 opacity-50">Current HQ</p>
+                            <p class="text-3xl">LOWER EAST SIDE</p>
+                            <p class="text-sm text-[#CB0D00] mt-2">Open Until 2AM</p>
+                        </div>
+                        <div>
+                            <p class="text-xs mb-4 opacity-50">Next Pop-Up</p>
+                            <p class="text-3xl">SOHO DESIGN WK</p>
+                            <p class="text-sm opacity-50 mt-2">March 15 — March 18</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sub-Text -->
+        <section class="border-t-2 border-[#201C0D] pt-8 flex justify-between items-center font-black uppercase text-[0.6rem] tracking-widest opacity-40">
+            <span>© 2026 BAO THEORY RESEARCH INSTITUTE</span>
+            <span>DATA-DRIVEN / FLAVOR-FIRST</span>
+            <span>EST. NYC</span>
+        </section>
+    </main>
+</body>
+</html>

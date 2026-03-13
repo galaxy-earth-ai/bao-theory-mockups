@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bao Theory | Route A: The Lab (Ticker-Heavy)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        :root {
+            --bao-cream: #F6F4ED;
+            --theory-black: #201C0D;
+            --taste-red: #CB0D00;
+        }
+        body { 
+            background-color: var(--bao-cream); 
+            color: var(--theory-black);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .ticker-wrap {
+            width: 100%;
+            overflow: hidden;
+            background: var(--theory-black);
+            color: var(--bao-cream);
+            padding: 10px 0;
+            white-space: nowrap;
+        }
+        .ticker {
+            display: inline-block;
+            animation: ticker 20s linear infinite;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .border-theory { border-color: var(--theory-black); }
+        .bg-taste { background-color: var(--taste-red); }
+        .text-taste { color: var(--taste-red); }
+        .btn-invert:hover {
+            background-color: var(--theory-black);
+            color: var(--bao-cream);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header / Nav -->
+    <nav class="border-b-2 border-theory p-6 flex justify-between items-center sticky top-0 bg-[#F6F4ED] z-50">
+        <div class="font-black text-3xl tracking-tighter uppercase">BAO THEORY</div>
+        <div class="hidden md:flex space-x-8 font-bold uppercase text-sm tracking-widest">
+            <a href="#" class="hover:underline">Menu</a>
+            <a href="#" class="hover:underline">Schedule</a>
+            <a href="#" class="hover:underline">Lab</a>
+            <a href="#" class="text-taste">Order Now</a>
+        </div>
+        <div class="md:hidden font-bold">MENU</div>
+    </nav>
+
+    <!-- Ticker 1 -->
+    <div class="ticker-wrap border-b-2 border-theory">
+        <div class="ticker">
+            BAO THEORY LAB — TODAY: MAIN ST. POP-UP — 11:00-20:00 — LIMITED STOCK — BAO THEORY LAB — TODAY: MAIN ST. POP-UP — 11:00-20:00 — LIMITED STOCK — 
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="grid md:grid-cols-2 min-h-[80vh] border-b-2 border-theory">
+        <div class="p-12 flex flex-col justify-center border-r-2 border-theory">
+            <h1 class="text-7xl md:text-9xl font-black leading-[0.8] tracking-tighter mb-8 uppercase">
+                THE<br>BAO<br>LOGIC.
+            </h1>
+            <p class="text-xl max-w-md mb-12 font-medium">
+                Scientific approach to street food. Traditional DNA, urban execution. Engineered for the 24-hour city.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <button class="bg-[#201C0D] text-[#F6F4ED] px-8 py-4 font-bold uppercase tracking-widest text-lg hover:bg-[#CB0D00] transition-colors">
+                    Find the Truck
+                </button>
+                <button class="border-2 border-theory px-8 py-4 font-bold uppercase tracking-widest text-lg btn-invert transition-colors">
+                    View Menu
+                </button>
+            </div>
+        </div>
+        <div class="relative bg-zinc-300 overflow-hidden flex items-center justify-center">
+            <!-- Placeholder for Hard-flash image -->
+            <img src="https://images.unsplash.com/photo-1523905330026-b8bd1f5f320e?auto=format&fit=crop&q=80&w=1000" class="w-full h-full object-cover grayscale contrast-125 brightness-75" alt="Bao Texture">
+            <div class="absolute inset-0 bg-[#CB0D00]/10 mix-blend-multiply"></div>
+            <div class="absolute bottom-8 right-8 bg-[#201C0D] text-[#F6F4ED] p-4 font-mono text-xs uppercase">
+                IMG_REF: 40.7128° N, 74.0060° W
+            </div>
+        </div>
+    </section>
+
+    <!-- Functionality Grid -->
+    <section class="grid md:grid-cols-3 border-b-2 border-theory">
+        <div class="p-10 border-b-2 md:border-b-0 md:border-r-2 border-theory hover:bg-[#FFF4D9] transition-colors group">
+            <span class="text-xs font-bold uppercase tracking-widest block mb-4">[01] DISCOVER</span>
+            <h2 class="text-4xl font-black uppercase mb-6 group-hover:text-taste">THE MENU</h2>
+            <ul class="space-y-2 font-bold opacity-60">
+                <li>Classic Pork Belly</li>
+                <li>Gochujang Fried Chicken</li>
+                <li>Black Truffle Mushroom</li>
+                <li>Golden Lava Mantou</li>
+            </ul>
+        </div>
+        <div class="p-10 border-b-2 md:border-b-0 md:border-r-2 border-theory hover:bg-[#FFF4D9] transition-colors group">
+            <span class="text-xs font-bold uppercase tracking-widest block mb-4">[02] LOCATE</span>
+            <h2 class="text-4xl font-black uppercase mb-6 group-hover:text-taste">SCHEDULE</h2>
+            <div class="space-y-4">
+                <div class="flex justify-between font-bold border-b border-theory/10 pb-2">
+                    <span>MON-WED</span>
+                    <span>TECH DISTRICT</span>
+                </div>
+                <div class="flex justify-between font-bold border-b border-taste/20 pb-2 text-taste">
+                    <span>THU-FRI</span>
+                    <span>CREATIVE HUB</span>
+                </div>
+                <div class="flex justify-between font-bold">
+                    <span>SAT-SUN</span>
+                    <span>FESTIVAL SQ.</span>
+                </div>
+            </div>
+        </div>
+        <div class="p-10 hover:bg-[#FFF4D9] transition-colors group">
+            <span class="text-xs font-bold uppercase tracking-widest block mb-4">[03] CONNECT</span>
+            <h2 class="text-4xl font-black uppercase mb-6 group-hover:text-taste">THE THEORY</h2>
+            <p class="font-bold mb-6 opacity-60">
+                Join the collective for limited drops and secret location alerts.
+            </p>
+            <div class="flex">
+                <input type="text" placeholder="EMAIL" class="bg-transparent border-b-2 border-theory w-full py-2 font-bold focus:outline-none focus:border-taste">
+                <button class="text-taste font-black text-2xl ml-4">→</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom Ticker -->
+    <div class="ticker-wrap bg-[#CB0D00] text-white py-2">
+        <div class="ticker" style="animation-duration: 10s;">
+            STREET BUT EDITORIAL — STREET BUT EDITORIAL — STREET BUT EDITORIAL — STREET BUT EDITORIAL — 
+        </div>
+    </div>
+
+    <footer class="p-12 text-center font-bold uppercase tracking-tighter text-sm opacity-40">
+        © 2026 BAO THEORY LAB / ALL RIGHTS RESERVED
+    </footer>
+</body>
+</html>
