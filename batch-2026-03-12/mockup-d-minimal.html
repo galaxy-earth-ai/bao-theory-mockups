@@ -66,9 +66,49 @@
         }
         .active-red { color: var(--taste-red); border-color: var(--taste-red); }
         .grid-layout { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--theory-black); }
+        
+        /* Mobile Nav */
+        #mobile-menu {
+            display: none;
+            grid-template-columns: repeat(2, 1fr);
+            border-bottom: 1px solid var(--theory-black);
+        }
+        #mobile-menu.open {
+            display: grid;
+        }
+        .mobile-nav-item {
+            padding: 2rem;
+            text-align: center;
+            border-right: 1px solid var(--theory-black);
+            border-bottom: 1px solid var(--theory-black);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+        .mobile-nav-item:nth-child(2n) { border-right: none; }
+
+        /* Pulse Animation */
+        .pulse {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--taste-red);
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
         @media (max-width: 768px) {
             .grid-layout { grid-template-columns: 1fr; }
             .info-cell { border-right: none; }
+            .header-grid { grid-template-columns: 1fr auto; }
+            .header-left { display: none; }
+            .header-right { display: none; }
         }
     </style>
 </head>
@@ -76,16 +116,32 @@
 
     <!-- Header -->
     <header class="header-grid sticky top-0 bg-[#F6F4ED] z-50">
-        <div class="flex space-x-4">
+        <div class="header-left flex space-x-4">
             <a href="#" class="nav-link">Menu</a>
             <a href="#" class="nav-link">Loc</a>
         </div>
         <div class="text-2xl font-black uppercase tracking-tighter">BAO THEORY</div>
-        <div class="flex justify-end space-x-4">
+        <div class="header-right flex justify-end space-x-4">
             <a href="#" class="nav-link">About</a>
             <a href="#" class="nav-link active-red">Order</a>
         </div>
+        <button onclick="toggleMenu()" class="md:hidden font-bold text-xs uppercase tracking-widest border border-[#201C0D] px-4 py-2">MENU [+/-]</button>
     </header>
+
+    <!-- Mobile Nav Menu -->
+    <nav id="mobile-menu" class="bg-[#F6F4ED] z-40 relative md:hidden">
+        <a href="#" class="mobile-nav-item hover:bg-[#201C0D] hover:text-[#F6F4ED] transition-colors">Menu</a>
+        <a href="#" class="mobile-nav-item hover:bg-[#201C0D] hover:text-[#F6F4ED] transition-colors">Locations</a>
+        <a href="#" class="mobile-nav-item hover:bg-[#201C0D] hover:text-[#F6F4ED] transition-colors">About</a>
+        <a href="#" class="mobile-nav-item bg-[#CB0D00] text-white hover:bg-[#201C0D] transition-colors">Order Now</a>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('open');
+        }
+    </script>
 
     <main>
         <!-- Title Section -->
@@ -97,7 +153,10 @@
                 </div>
                 <div class="flex flex-col items-end">
                     <span class="text-[0.6rem] font-black uppercase opacity-40 mb-2">Current Status:</span>
-                    <div class="text-3xl font-bold uppercase tracking-tighter text-[#CB0D00]">LIVE: MAIN ST. POP-UP</div>
+                    <div class="text-3xl font-bold uppercase tracking-tighter text-[#CB0D00] flex items-center">
+                        <span class="pulse"></span>
+                        LIVE: MAIN ST. POP-UP
+                    </div>
                 </div>
             </div>
         </section>
